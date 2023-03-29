@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Il blog dei developers">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
   <title>Blog Epicode</title>
   <script src="https://kit.fontawesome.com/be93b78a1f.js" crossorigin="anonymous"></script>
 </head>
@@ -53,16 +54,29 @@
     <label for="consenso">
       Acconsento al trattamento dei dati
     </label>
-   
-    <input id="consenso" type="checkbox">
+    <input id="consenso" checked type="checkbox">
 
 
     <select name="" id=""></select>
 
 
 
-    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <textarea name="" id="" cols="30" rows="10"></textarea><br>
 
+    <label for="m">maschio</label>
+    <input type="radio" id="m" name="sesso" value="m"><br>
+
+    <label for="f">femmina</label>
+    <input type="radio" id="f" name="sesso" value="f"><br>
+
+    <label for="x">non si sa</label>
+    <input type="radio" id="x" name="sesso" value="x"><br>
+
+    <select name="city" id="">
+      <option value="">--secgli--</option>
+      <option value="roma">Roma</option>
+      <option value="milano">Milano</option>
+    </select>
 
 
     <button>Invia</button>
