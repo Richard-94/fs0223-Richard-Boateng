@@ -1,0 +1,203 @@
+/* IMPOSTAZIONI GENERALI */
+
+/* HEADER */
+
+/* MAIN */
+
+/* ELEMENTI NEL MAIN - ARTICLE */
+
+/* TABELLE */
+
+/* FORM */
+
+/* ELEMENTI NELL' ASIDE */
+
+/* FOOTER */
+
+body{
+    padding: 20px;
+    background-image: url(../img/sfondo.png);
+    background-size: contain;
+    background-repeat: repeat-y;
+    font-size: 1.4rem;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    
+}
+
+main{
+    background-color: #fff;
+    padding: 15px;
+}
+
+
+
+#head{
+    background-color: #0081A1;
+   padding: 20px;
+   font-size: 1.3rem;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+.uppercase{
+    text-transform: uppercase;
+    padding: 30px 0;
+    
+}
+
+#head p{
+    color: white;
+    
+}
+
+#head a{
+    
+    text-decoration: none;
+    margin: 15px;
+    color: white;
+    
+}
+
+#head ul{
+    list-style-type: none;
+    margin: 0;
+}
+
+#head a::before{
+    content:i class="fa-solid fa-arrow-right";
+    font-family: "Font Awesome";
+    color: white;
+    height: 50px;
+    margin-right: 10px;
+    display: inline-block;  
+}
+
+#content h1{
+    font-size: 2.5rem;
+    padding: 15px 0;
+    line-height: 1.5;
+}
+
+
+
+.author::before,
+.author span::before{
+    content:"\f007";
+    font-family: "Font Awesome 5 Free";
+    height: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    
+}
+
+p{
+    margin: 20px 0;
+    
+}
+
+ul,li {
+    margin-left: 30px;
+}
+
+code{
+    background-color: grey;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+strong{
+    color: purple;
+}
+
+caption{
+    font-style: italic;
+    font-weight: bold;
+}
+
+th{
+    background-color: blue;
+    padding: 20px;
+    color: white;
+}
+
+td{
+    padding: 15px;
+}
+
+table tr:nth-of-type(even){
+    background-color: lightgray;
+}
+
+.validation a{
+    color: violet;
+}
+
+.video{
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 20px;
+    width: 90%;
+}
+
+#news{
+    background-color: lightgray;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+h2{
+    text-align: center;
+    padding-left: 0;
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
