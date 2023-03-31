@@ -82,6 +82,19 @@ h2{
     
 }
 
+.text a{
+    text-decoration: none;
+    color: white;
+}
+
+.course p:last-child:hover{
+    
+    background-color: #f0a32f;
+    transition: 0.5s ease 0.2s;
+    
+}
+
+
 .text,h2,#foot p, #foot a{
     color: white;
 }
