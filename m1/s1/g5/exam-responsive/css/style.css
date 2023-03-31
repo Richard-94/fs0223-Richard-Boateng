@@ -4,7 +4,6 @@
 *{
     box-sizing: border-box;
 }
-
 body{
     color: #393d41;
     font-size: 1.2rem;
@@ -70,12 +69,11 @@ h2{
 .course p:last-child{
     font-weight: bold;
     background-color: #f04c2f;
-    width: 200px;
+    width: 100px;
     margin: 0 auto;
     margin-top: 30px;
     padding: 10px 40px;
     border-radius: 5px;
-    
     
 }
 
@@ -153,4 +151,28 @@ h2{
     margin: 0 auto;
     margin-top: 30px;
     padding-top: 20px;
+}
+
+@media screen and (max-width: 1920px) {
+    main{
+        text-align: center;
+    }
+    #head{
+        text-align: left;
+    }
+    #head img{
+        width: 10%;
+        
+    }
+
+    .course{
+        background-size: contain;
+       
+       
+    }
+
+    .course p{
+        padding: 0 30%;
+    }
+    
 }
