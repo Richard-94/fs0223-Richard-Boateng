@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+img{
+    max-width: 100%;
+}
+
 body{
     color: #393d41;
     font-size: 1.2rem;
@@ -27,9 +31,6 @@ h1,h3,h4,h5,h6{
     padding: 25px;
 }
 
-#head img{
-    width: 30%;
-}
 
 h1,h2{
     margin-top: 15px;
