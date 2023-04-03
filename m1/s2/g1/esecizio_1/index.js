@@ -22,7 +22,7 @@ document.getElementById("multiply").innerHTML = multiplication;
 
 
 for (var i=1; i <=15; i++){
-    document.getElementById("square_numbers").innerHTML =document.write(i**2 + "<br>");
+    document.getElementById("square_numbers").innerHTML +=(i**2 + "<br>");
 }
 document.write("Fine elaborazione");
 
@@ -33,8 +33,17 @@ var typeNumber1 = parseInt(prompt("type first number"))
 var typeNumber2 = parseInt(prompt("type second number"))
 
 var calculateAddition = typeNumber1 + typeNumber2;
+var calculateSubtraction = typeNumber1 - typeNumber2;
+var calculateMultiply = typeNumber1 * typeNumber2;
+var calculatDivide = typeNumber1 / typeNumber2;
 
-document.getElementById("add").innerHTML= ("The addition is " + ":" + calculateAddition)
+
+document.getElementById("add").innerHTML= ("The addition is " + ":" + calculateAddition);
+document.getElementById("sub").innerHTML= ("The subtraction is " + ":" + calculateSubtraction);
+document.getElementById("multi").innerHTML= ("The multiplication is " + ":" + calculateMultiply);
+document.getElementById("divi").innerHTML= ("The division is " + ":" + calculatDivide);
+
+
 
 
 
