@@ -1,0 +1,45 @@
+
+ /*input[type="checkbox"]{ /*peso 1 + 10    width: 100px; 
+    height: 100px;
+}*/
+
+#menu{
+    list-style: none;
+    height: 0;
+    overflow: hidden;
+}
+
+#check:checked + #menu{
+    /* width: 10px;
+    height: 10px; */
+    height: 200px;
+}
+
+#check{
+    display: none;
+}
+
+#menu li:not(:first-child) a{
+    color: red;
+}
+
+.quadrato{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+#q2{
+    overflow: auto;
+}
+
+#q3{
+    background-color: red;
+    height: 50px;
+    max-width: 600px;
+}
+
+#q4{
+    padding: 15px;
+    box-sizing: border-box;
+}
