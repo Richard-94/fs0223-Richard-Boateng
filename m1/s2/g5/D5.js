@@ -10,10 +10,9 @@ REGOLE
     Dato il seguente array, scrivi del codice per stampare ogni elemento dell'array in console.
 */
 const pets = ['dog', 'cat', 'hamster', 'redfish']
-             console.log(pets[0]);
-             console.log(pets[1]);
-             console.log(pets[2]);
-             console.log(pets[3]);
+for(let i = 0; i < pets.length; i++){
+  console.log(pets[i]);
+}
              
 /* ESERCIZIO 2
     Scrivi del codice per ordinare alfabeticamente gli elementi dell'array "pets".
@@ -119,23 +118,19 @@ const numericArray = [
 ]
 
 
-let run = [];
-  let i = 0
-   let k = numericArray
-   //console.log(k);
-   while(i<k.length){
-    if(k ==32) break;
-      k++;
-    console.log(k);
-   }
+
+   let i = 0
+    let k = numericArray
+   
+    while(i<k.length){
+     if(k==32) break;
+       k++;
+     console.log(k);
+    }
   
-//   let i = 0
-//   let k = numericArray
-//    do{
-//   console.log(k[i]);
-//    k++;
-//  }while(i<k.length)
-  
+
+
+
 
 /* ESERCIZIO 10
     Partendo dall'array fornito e utilizzando un costrutto switch, genera un nuovo array composto dalle posizioni di ogni carattere all'interno
