@@ -10,8 +10,8 @@ REGOLE
     Dato il seguente array, scrivi del codice per stampare ogni elemento dell'array in console.
 */
 const pets = ['dog', 'cat', 'hamster', 'redfish']
-for(let i = 0; i < pets.length; i++){
-  console.log(pets[i]);
+for (let animals of pets){
+  console.log(animals);
 }
              
 /* ESERCIZIO 2
@@ -54,6 +54,7 @@ const cars = [
   },
 ]
 
+
 console.log(cars[0].licencePlate= "AS 956 GS")
 //console.log(cars[0]);
 
@@ -62,7 +63,7 @@ console.log(cars[1].licencePlate= "GG 956 WS")
 
 console.log(cars[2].licencePlate= "VW 006 NS")
 //console.log(cars[2]);
-
+console.log(cars);
 
 /* ESERCIZIO 6
     Scrivi del codice per aggiungere un nuovo oggetto in ultima posizione nell'array "cars", rispettando la struttura degli altri elementi.
