@@ -120,12 +120,14 @@ const numericArray = [
 
 
    let i = 0
-    let k = numericArray
+    let k = numericArray.length
    
-    while(i<k.length){
-     if(k==32) break;
-       k++;
-     console.log(k);
+    while(i<k){
+     if(numericArray[i]<32){
+      console.log(numericArray[i]);
+     }
+       i++;
+    
     }
   
 
