@@ -54,16 +54,20 @@ const cars = [
   },
 ]
 
+// let a ="AS 955 VF"
+// cars.forEach((valore) => {
+//   valore.LicencePlate = a
+// })
+// console.log(cars);
 
-console.log(cars[0].licencePlate= "AS 956 GS")
-//console.log(cars[0]);
+let x ="AS 568 VF"
+let newNumber = cars.map((val) => ({
+  ...val,
+  licenseNumber:x
+}))
+console.log(newNumber);
 
-console.log(cars[1].licencePlate= "GG 956 WS")
-//console.log(cars[1]);
 
-console.log(cars[2].licencePlate= "VW 006 NS")
-//console.log(cars[2]);
-console.log(cars);
 
 /* ESERCIZIO 6
     Scrivi del codice per aggiungere un nuovo oggetto in ultima posizione nell'array "cars", rispettando la struttura degli altri elementi.
@@ -88,6 +92,7 @@ for(let canc= 0; canc<cars.length;canc++){
 /* ESERCIZIO 7
     Scrivi del codice per salvare il primo elemento della proprietà "trims" di ogni auto nel nuovo array "justTrims", sotto definito.
 */
+
 const justTrims = []
 for(let save= 0; save<cars.length;save++){
   let newElement = cars[save].trims.shift()
@@ -120,18 +125,21 @@ const numericArray = [
 
 
 
-   let i = 0
-    let k = numericArray.length
+    let i = 0
+     let k = numericArray.length
    
-    while(i<k){
-     if(numericArray[i]<32){
-      console.log(numericArray[i]);
-     }
-       i++;
+     while(i<k){
+      if(numericArray[i]<32){
+       console.log(numericArray[i]);
+      }
+        i++;
     
-    }
+     }
   
-
+let filteredNumbers = numericArray.filter (function(allNumbers){
+  return allNumbers <32
+})
+console.log(filteredNumbers);
 
 
 
