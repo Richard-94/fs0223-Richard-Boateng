@@ -6,6 +6,10 @@ REGOLE
 - Per farlo puoi utilizzare il terminale Bash, quello di VSCode o quello del tuo sistema operativo (se utilizzi macOS o Linux)
 */
 
+
+//*******************NON AVEVO CAPITO MOLTO BENE COME USARE LE FORME SEMPLICI DI FOR QUINDI HO FATTO TUTTO L'ESERCIZIO USANDO LA FORMA LUNGA 
+//DI FOR. L'HO CAPITA ADESSO E QUINDI HO RIFATTO TUTTO L'ESERCIZIO CON FOR SEMPLICE MANTENENDO SEMPRE LA FORMA LUNGA
+
 /* ESERCIZIO 1
     Dato il seguente array, scrivi del codice per stampare ogni elemento dell'array in console.
 */
@@ -54,11 +58,11 @@ const cars = [
   },
 ]
 
-// let a ="AS 955 VF"
-// cars.forEach((valore) => {
-//   valore.LicencePlate = a
-// })
-// console.log(cars);
+ let a ="AS 955 VF"
+ cars.forEach((valore) => {
+   valore.LicencePlate = a
+ })
+ console.log(cars);
 
 let x ="AS 568 VF"
 let newNumber = cars.map((val) => ({
@@ -82,10 +86,17 @@ let newObject = {
 console.log(cars.push(newObject));
 
 
-for(let canc= 0; canc<cars.length;canc++){
+ for(let canc= 0; canc<cars.length;canc++){
   let eliminate = cars[canc].trims
-  console.log(eliminate.pop());
-}
+   console.log(eliminate.pop());
+ }
+
+   console.log(cars);
+
+  for (let rimuovi of cars){
+    let rim = rimuovi.trims
+    console.log(rim.pop());
+  }
   console.log(cars);
 
 
@@ -94,27 +105,44 @@ for(let canc= 0; canc<cars.length;canc++){
 */
 
 const justTrims = []
-for(let save= 0; save<cars.length;save++){
+ for(let save= 0; save<cars.length;save++){
   let newElement = cars[save].trims.shift()
-  console.log(justTrims.push(newElement));
-  //console.log(justTrims);
+   console.log(justTrims.push(newElement));
+   console.log(justTrims);
   
+ }
+ 
+let justTrimss = []
+for (let saves of cars){
+  let salva = saves.trims
+  console.log(justTrimss.push(salva.shift()));
 }
+console.log(justTrimss);
 
 /* ESERCIZIO 8
     Cicla l'array "cars" e costruisci un if/else statament per mostrare due diversi messaggi in console. Se la prima lettera della proprietà
     "color" ha valore "b", mostra in console "Fizz". Altrimenti, mostra in console "Buzz".
 */
-for(let cycle= 0; cycle<cars.length;cycle++){
-  let letter = cars[cycle].color
-  let alphabet = letter.slice(0,1);
-  if(alphabet === "b"){
-    console.log("Fizz")
-  }else{
+
+
+ for(let cycle= 0; cycle<cars.length;cycle++){
+   let letter = cars[cycle].color
+   let alphabet = letter.slice(0,1);
+   if(alphabet === "b"){
+     console.log("Fizz")   }else{
+     console.log("Buzz");
+   }
+ }
+
+for (let show of cars){
+  let modify = show.color
+  let alpha = modify.slice(0,1);
+  if(alpha === "b"){
+     console.log("Fizz")  
+    }else{
     console.log("Buzz");
   }
 }
-
 
 /* ESERCIZIO 9
     Utilizza un ciclo while per stampare in console i valori del seguente array numerico fino al raggiungimento del numero 32.
@@ -137,7 +165,7 @@ const numericArray = [
      }
   
 let filteredNumbers = numericArray.filter (function(allNumbers){
-  return allNumbers <32
+  return allNumbers < 32
 })
 console.log(filteredNumbers);
 
