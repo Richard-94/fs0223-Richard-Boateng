@@ -228,15 +228,25 @@ const movies = [
 /* ESERCIZIO 10
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
-save = []
+// save = []
 
-for(let filmYears of movies){
-  let films = filmYears.Year
-  save.push(films)
-}
-let myFilms = save.reduce((a,b) => a > b ? b:a)
+// for(let filmYears of movies){
+//   let films = filmYears.Year
+//   save.push(films)
+// }
+// let myFilms = save.reduce((a,b) => a > b ? b:a)
  
-console.log(myFilms);
+// console.log(myFilms);
+function getOlderMovies(){
+  let olderMovie = null;
+  for(let currentMovie of movies){
+    if(olderMovie == null || olderMovie.Year > currentMovie.Year){
+      olderMovie = currentMovie;
+    }
+  }
+  return olderMovie;
+}
+console.log(getOlderMovies);
 
 
 /* ESERCIZIO 11
@@ -255,21 +265,42 @@ console.log(longest.length);
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 
-memorize = []
-
-for(let wars of movies){
-  let movies = wars.Title
-  memorize.push(movies)
+let memorize = []
+function allMovies(){
+  for(let wars of movies){
+    let movies = wars.Title
+    memorize.push(movies)
+  }
+  return
 }
+
+allMovies();
 console.log(memorize);
 
 /* ESERCIZIO 13
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
+
 */
+function millenium() {
+  let moviesAfter2000 = movies.filter(function(movie){
+    return movie.Year > 2000
+  })
+  return moviesAfter2000
+  
+}
+console.log(millenium());
 
 /* ESERCIZIO 14
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
+
+function search(imdbID) {
+  let mySearch = movies.find(function(searchAll){
+    return searchAll.imdbID === imdbID
+  })
+  return mySearch||null
+}
+console.log(search("tt4154796"));
 
 /* ESERCIZIO 15
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
