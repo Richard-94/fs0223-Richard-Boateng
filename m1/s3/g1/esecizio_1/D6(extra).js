@@ -6,6 +6,30 @@
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
 
+function checkArray(x) {
+    let check = [];
+    let ch = []
+    for (let i = 0; i < x; i++) {
+           let k = check.push(Math.floor(Math.random() * 11));
+           for (let y = 0; y< check.length; y++) {
+                if(check[y]>5){
+                    ch.push(y)
+                }
+           }
+           
+        }
+        return ch.find(function(b){
+            b > 5;
+        })
+        
+}
+
+
+   
+    
+
+console.log(checkArray(6));
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 2

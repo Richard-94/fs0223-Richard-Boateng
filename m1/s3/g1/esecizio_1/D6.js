@@ -74,11 +74,13 @@ console.log(boundary(10));
 */
 
 function epify(test){
-    if(test !== test){
-        return test.unshift("epicode")
-    }
+    if(test.startsWith("EPICODE")){
+        return test
+    }else {
+        return "EPICODE" + test;
+      }
 }
-//console.log(epify(test));
+console.log(epify("EPICODE"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -121,12 +123,13 @@ console.log(reverseString("boss"));
 
   function upperFirst(words) {
      let divide = words.split (" ");
-     console.log(divide);
+     let result = [];
      for(let sea of divide){
-        console.log(sea);
-        return sea[0].toUpperCase() + sea.slice(1);
+        let first = sea[0].toUpperCase();
+        let parola = first + sea.slice(1)
+        result.push(parola);
      }
-     
+     return result.join(" ")
     
  }
  console.log(upperFirst("beautiful day"));
@@ -138,16 +141,28 @@ console.log(reverseString("boss"));
  della stringa originale.
 */
 
+function cutString(stringa) {
+    return stringa.slice(1,-1);
+    
+}
+console.log(cutString("vaffanculo"));
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-function giveMeRandom(figures) {
-    (Math.floor(Math.random()*10 ))
-    return
-}
-console.log(giveMeRandom(6));
+
+
+
+function giveMeRandom(n) {
+    const arr = [];
+    for (let i = 0; i < n; i++) {
+      arr.push(Math.floor(Math.random() * 11));
+    }
+    return arr;
+  }
+  console.log(giveMeRandom(10));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
