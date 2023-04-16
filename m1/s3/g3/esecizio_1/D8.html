@@ -17,6 +17,10 @@
       margin: 0;
     }
 
+    h1 {
+   cursor: pointer; 
+}
+
     body div,
     footer {
       padding: 1rem;
@@ -79,97 +83,135 @@
     /* ESERCIZIO 1
        Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
     */
-    let h1 = document.getElementsByTagName("h1");
-    h1.addEventListener("click", changeTitle)
     const changeTitle = function () {
-      h1.innnerHTML="ciao";
-      return
-
-    }
-    console.log(changeTitle())
+   document.getElementsByTagName("h1")[0].innerHTML="New title"
+   return
+  }
+  changeTitle()
+   
+    // let h1 = document.getElementsByTagName("h1")[0];
+    // const changeTitle = function () {
+    //   h1.innerHTML="ciao";
+    // }
+    // h1.addEventListener("click", changeTitle)
+    
 
     /* ESERCIZIO 2
        Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
     */
+     const addClassToTitle = function () {
+     let title = document.querySelector("h1")[0];
+       let newElelment = document.createElement("span");
+       newElelment.textContent = "nuovo elemento"
+     newElelment.classList.add("myHeading")
+       title.appendChild(newElelment);
+       return
+     }
 
-
-    
-    const addClassToTitle = function () {
-
-
-    }
+    //console.log(addClassToTitle);
 
     /* ESERCIZIO 3
        Scrivi una funzione per che cambi il testo dei p figli di un div
       */
 
     const changePcontent = function () {
-
-
+      let p = document.querySelectorAll("div p");
+      for(let para of p){
+        para.innerHTML = "new parag"
+      }
+      return
     }
+    changePcontent();
 
     /* ESERCIZIO 4
        Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
       */
 
     const changeUrls = function () {
-
-
+      let a = document.querySelectorAll("a:not(h3 a)");
+      for(let anchor of a){
+        anchor.href = "https://www.google.com"
+      }
+      return
     }
+    changeUrls();
 
     /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
     */
 
     const addToTheSecond = function () {
-
-
+      let ul = document.querySelector("#secondList")
+      let li = document.createElement("li");
+      li.textContent = "4th";
+      ul.append(li)
+      return
     }
+    addToTheSecond();
 
     /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un secondo paragrafo al primo div
     */
 
     const addParagraph = function () {
-
-
+      let paragraph = document.querySelector("div:nth-child(2) p");
+      let newParagraph = document.createElement("p");
+      newParagraph.textContent = "Am the new paragraph";
+      paragraph.append(newParagraph);
+      return
     }
+    addParagraph();
 
     /* ESERCIZIO 7
        Scrivi una funzione che faccia scomparire la prima lista non ordinata
     */
 
     const hideFirstUl = function () {
-
-
+      let list = document.querySelector("#firstList");
+      list.style.visibility= "hidden"
+      return
     }
+    console.log(hideFirstUl());
 
     /* ESERCIZIO 8 
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
       */
 
     const paintItGreen = function () {
-
-
+      let backGround = document.querySelectorAll("ul");
+      for(let back of backGround){
+        back.style.backgroundColor = "green"
+      }
+      return
     }
+    paintItGreen()
 
     /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
-
+    
     const makeItClickable = function () {
-
-
+      let removeLetters = document.querySelector("h1");
+      removeLetters.textContent = removeLetters.textContent.slice(0,-1);
+      
+      return
     }
+    let clean = document.querySelector("h1");
+    clean.addEventListener("click", makeItClickable)
+      
 
     /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
 
     const revealFooterLink = function () {
-
-
+      let reveal = document.querySelector("h3 a");
+      
+      alert(reveal);
+      return
     }
+    let pop = document.querySelector("h3 a");
+    pop.addEventListener("click", revealFooterLink)
 
     /* ESERCIZIO 11
        Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
@@ -212,10 +254,16 @@
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
     */
 
-    const deleteVowels = function () {
+    // const deleteVowels = function () {
+    //   let body = document.getElementById("body")
+    //   let alpa = ["a","e","i","o","u"];
+    //   let filteredLetters = alpa.filter(function(x){
+    //     if (body === alpha){
+    //       x.remove()
+    //     }
+    //   })
 
-
-    }
+    // }
 
   </script>
 </body>
