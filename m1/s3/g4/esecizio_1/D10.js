@@ -33,7 +33,6 @@ let me = {
   
 }
 
-
 console.log(me);
 
 
@@ -48,18 +47,14 @@ console.log(me);
 /* ESERCIZIO E
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
-
-
   me.skills = ["HTML","CSS","Javascript"];
-
  console.log(me);
-
 
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
 
-  me.skills.push("Java");
+me.skills.push("Java");
 console.log(me);
 
 /* ESERCIZIO G
@@ -142,8 +137,8 @@ console.log(onlyLetters("i have 5 cats and 90 dogs"));
 function whatDayIsIt() {
   let today = new Date;
   let actualDay =  today.getDay();
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-  let newDay = days[actualDay-1];
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  let newDay = days[actualDay];
   return newDay
 }
 console.log(whatDayIsIt());
@@ -167,7 +162,7 @@ function rollTheDices(casualNumber) {
   for (let i = 0; i<casualNumber ; i++){
     memory.push(i)
     values.push(save());
-    console.log(values);
+    
   }
   let sumNumbers = values.reduce(function(a,b){
     return a+b
@@ -181,16 +176,25 @@ console.log(rollTheDices(5));
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
-function howManyDays(actualDate, actualMonth,actualYear) {
-  let year = new Date;
-    let x = (year.getFullYear());
-    console.log(x);
-    let y = ((year.getMonth()+1)*30);
-    console.log(y);   
-    let z = year.getDate();
-    console.log(z);
-    return(x+y+z)
+
+
+function howManyDays(actualYear, actualMonth, actualDay) {
+  let myDay = new Date();
+  let newDays = myDay.getDate();
+  let newMonth = myDay.getMonth() + 1;
+  let currentYear = myDay.getFullYear();
+  if (actualYear < currentYear) {
+    let s = (currentYear - actualYear) * 12 * 30;
+    let allDays = (12 - actualMonth + 1) * 30;
+    let p = allDays + (newMonth - 1) * 30 + newDays;
+    let b = s - p;
+    return b;
+  } else {
+    let daysDiff = (myDay.getTime() - new Date(actualYear, actualMonth - 1, actualDay).getTime()) / (1000 * 3600 * 24);
+    return Math.round(daysDiff)-1;
+  }
 }
+
 console.log(howManyDays(2023,4,15));
 
 
@@ -461,37 +465,87 @@ console.log(removeIndex(3));
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 function getId() {
-  let id = document.querySelector("#");
-  return
+  return document.querySelector("#container");
 }
-
-
 console.log(getId());
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 
+function allTd() {
+  let td = document.querySelectorAll("td");
+  for(let allTd of td){
+    //allTd.style.color="red"
+    
+  }
+  return  
+}
+allTd()
+
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+ function content(){
+   let text = document.querySelectorAll("td");
+   for (let print of text){
+    console.log(print.textContent);
+   }
+   return
+  
+ }
+ content();
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 
+function background() {
+  let a = document.querySelectorAll("a")
+  for(let anchor of a){
+    anchor.style.backgroundColor = "red"
+  }
+  return
+}
+background();
+
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+function newList() {
+  let ul = document.querySelector("#myList ul");
+  let li = document.createElement("li");
+  li.textContent = "telephone";
+  ul.append(li);
+  return;
+  
+}
+newList();
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+function empty() {
+  let list = document.querySelector("#myList ul")
+  list.innerHTML = ''
+  return
+}
+empty()
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
+function addClass() {
+  let tr = document.querySelectorAll("tr");
+  for(let newClass of tr){
+    newClass.classList.add("myClass")
+  }
+  return
+  
+}
+addClass()
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
@@ -501,10 +555,31 @@ console.log(getId());
   halfTree(3)
 
   *
-  **
+  ** 
   ***
 
 */
+
+ var tree = function thowNumber() {
+   let newNumber = Math.floor(Math.random());
+   newNumber = "*"
+   let howMany = newNumber
+   return (howMany);
+ }
+ tree();
+
+ var normal = function halfTree(ricieve) {
+ let allValues= " "
+   for (let i = 0; i<ricieve ; i++){
+     allValues+=(tree());
+     console.log(allValues);
+   }
+   return 
+ }
+
+ normal(10);
+
+
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -518,9 +593,76 @@ console.log(getId());
 
 */
 
+
+var newTree = function anotherNumber() {
+  let newSymbol = Math.floor(Math.random());
+  newSymbol = "*"
+  let howManySymbols = newSymbol
+  return (newSymbol);
+}
+
+
+var normalize = function halfTree(putNumber) {
+  let newValues= []
+  let k = []
+    for (let i = 0; i<putNumber ; i++){
+      newValues += (newTree());
+      console.log(newValues);
+    }
+    return newValues
+    var newField= function another() {
+      let sym = Math.floor(Math.random());
+      sym = "*"
+      let howManySym =sym
+      return (sym);
+      let u = newValues.unshift(sym)
+      k.push(u)
+      console.log(k);
+    }
+   return
+  }
+  
+  normalize(20);
+
+  
+
+
+  
+
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+ function isItPrime(theNumber) {
+ 
+   if(theNumber%2===0){
+     return false
+   }
+   else if(theNumber/theNumber===1 && theNumber/1===theNumber ) {    
+     return true
+   }
+   else if(theNumber/theNumber===1 && theNumber/1===theNumber){
+     return true
+   }
+   return
+ }
+ console.log(isItPrime(35));
+
+
+
+
+function isItPrime(theNumber) {
+  if (theNumber <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(theNumber); i++) {
+    if (theNumber % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
