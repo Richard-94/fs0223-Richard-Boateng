@@ -81,12 +81,12 @@ console.log(save());
 function whoIsBigger(a, b) {
   if (a > b){
     return (a + " is bigger")
-  }else if(b > a){
+  }else{
     return (b + " is bigger")
   }
 
 }
-console.log(whoIsBigger(10,6));
+console.log(whoIsBigger(10,60));
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
@@ -96,7 +96,7 @@ console.log(whoIsBigger(10,6));
 function splitMe(text) {
   return text.split(" ");
 }
-console.log(splitMe("i love you yes"));
+console.log(splitMe("i love you "));
 
 
 /* ESERCIZIO 4
