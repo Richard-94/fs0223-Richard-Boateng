@@ -600,7 +600,7 @@ addClass()
 
 */
 
-
+//NON è FINITO
 var newTree = function anotherNumber() {
   let newSymbol = Math.floor(Math.random());
   newSymbol = "*"
