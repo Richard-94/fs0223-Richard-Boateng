@@ -39,9 +39,9 @@ console.log(me);
 /* ESERCIZIO D
   Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
 */
-for (let prop in me){
+
   delete me.age
-}
+
 
 console.log(me);
 /* ESERCIZIO E
@@ -135,11 +135,7 @@ function isThisAnEmail(email){
     return regex.test(email);
     
 }
-  
-
 console.log(isThisAnEmail("example.@gmail.it"));
-
-
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
