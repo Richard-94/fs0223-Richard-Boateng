@@ -124,12 +124,11 @@ console.log(justTrimss);
     "color" ha valore "b", mostra in console "Fizz". Altrimenti, mostra in console "Buzz".
 */
 
-
  for(let cycle= 0; cycle<cars.length;cycle++){
    let letter = cars[cycle].color
    let alphabet = letter.slice(0,1);
    if(alphabet === "b"){
-     console.log("Fizz")   }else{
+     console.log("Fizz")  }else{
      console.log("Buzz");
    }
  }
@@ -150,8 +149,6 @@ for (let show of cars){
 const numericArray = [
   6, 90, 45, 75, 84, 98, 35, 74, 31, 2, 8, 23, 100, 32, 66, 313, 321, 105,
 ]
-
-
 
     let i = 0
      let k = numericArray.length
