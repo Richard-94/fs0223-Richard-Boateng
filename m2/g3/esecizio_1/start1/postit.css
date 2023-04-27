@@ -1,0 +1,70 @@
+
+#container{
+    background-color: grey;
+    
+
+}
+
+div{
+    padding: 20px 15px;
+    margin: 0 8px;
+    
+}
+
+.post1 div,
+.post2 div{
+    box-shadow: 1px 1px rgb(0, 0, 0, 0.3); 
+    
+}
+
+
+
+.post1,
+.post2{
+    display: flex;
+    
+    font-family: 'Indie Flower', cursive;;
+}
+
+h2{
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+p{
+    font-size: 0.6rem;
+}
+
+.yellow{
+    background-color: rgb(245, 245, 129);
+    transform: rotate(-6deg);  
+}
+
+#rotate1{
+    transition:3s ease;
+    transform: rotate(6) ; 
+    position: relative;
+    
+    
+    
+}
+
+#rotate1:hover{
+    transition:3s ease-in-out;
+    transform: rotate(0) ; 
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 2px 2px rgb(0, 0, 0, 0.2); 
+    
+}
+
+.green{
+    background-color: lightgreen;
+    transform: rotate(6deg)
+}
+
+.blue{
+    background-color: lightskyblue;
+    transform: rotate(-10deg);
+}

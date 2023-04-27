@@ -1,0 +1,116 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+ 
+#testoAlternato{
+	
+	background-color: #293132;
+	text-align: center;
+	margin: 50px 0;
+    padding: 40px;
+    color: white;
+}
+
+
+
+.parole{
+	display: block;
+	position: relative;
+    margin-left: 180px;
+   
+}
+
+.parole i{
+	display: inline-block;
+	position: absolute;
+	
+	transform: rotateX(-90deg);
+	opacity: 0;
+	text-shadow: 0px 5px 5px rgba(0,0,0,.25);
+	animation-timing-function: ease;
+}
+
+.parole i:nth-child(1){
+	animation: rollDown 10s forwards infinite;
+    
+}
+
+.parole i:nth-child(2){
+	animation: rollDown2 10s forwards infinite;
+}
+
+.parole i:nth-child(3){
+	animation: rollDown3 10s forwards infinite;
+}
+
+@keyframes rollDown {
+	0%{
+		top: -30px;
+		transform: rotateX(-90deg);
+	}
+	11%{
+		top: -16px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	22%{
+		top: -16px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	33%{
+		top: 10px;
+		transform: rotateX(30deg);
+		opacity: 0;
+	}
+}
+ 
+@keyframes rollDown2 {
+	33%{
+		top: -30px;
+		transform: rotateX(-90deg);
+	}
+	44%{
+		top: -16px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	55%{
+		top: -16px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	66%{
+		top: 10px;
+		transform: rotateX(30deg);
+		opacity: 0;
+	}
+}
+
+@keyframes rollDown3 {
+	66%{
+		top: -30px;
+		transform: rotateX(-90deg);
+	}
+	77%{
+		top: -16px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	88%{
+		top: -16px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	99%{
+		top: 10px;
+		transform: rotateX(30deg);
+		opacity: 0;
+	}
+} 
