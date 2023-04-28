@@ -1,171 +1,329 @@
-/* Your styles here */
+
+
+
+:root {
+    --primary: #ffc017;
+    --black: #191919;
+    --green: #1a8917;
+    --white: #fff;
+}
+
 
 
 *{
     box-sizing: border-box;
-}
-
-img{
-    max-width: 100%;
-}
-
-body{
-    color: #393d41;
-    font-size: 1.2rem;
-    line-height: 1.65;
-    font-family:'Open Sans', sans-serif;
-    text-align: center;
-}
-
-h1,h3,h4,h5,h6{
-    color: #25a2c3 ;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    line-height: 1.5;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-#head{
-    background-color: #000;
-    padding: 25px;
+    margin: 0;
+    padding: 0;
 }
 
 
-h1,h2{
-    margin-top: 15px;
-    margin-bottom: 10px;
+#navigation,
+#main_content,
+.more_articles,
+#task{
+    
+    padding: 8px 20px;
+    
 }
-
-h1{
-    font-size: 2.8rem;
-    line-height: 1;
-}
-
-h2{
-    font-size: 2.5rem;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.all-content{
-    padding: 0 50px;
-    margin-bottom: 60px;
-}
-
-.all-images{
+#navigation{
+   position: fixed;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary);
     width: 100%;
+    border-bottom: 0.5px solid var(--black);
 }
 
-.right-image img{
-    border-radius: 100%;
-    margin: 20px 0;
+ul{
+    list-style: none;
 }
 
-.course{
-    background-image: url(../img/banner.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 40px;
+#branch{
+    position: relative;
+    background-color: var(--primary);
 }
 
-.course p:last-child{
-    font-weight: bold;
-    background-color: #f04c2f;
-    width: 200px;
-    margin: 0 auto;
-    margin-top: 30px;
-    padding: 10px 40px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+.multiple{
+    width: 40%;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
 }
 
-.text a{
-    text-decoration: none;
-    color: white;
+.contents ul{
+    display: flex;
 }
 
-.course p:last-child:hover{
-    
-    background-color: #f0a32f;
-    transition: 0.5s ease 0.2s;
+.contents li{
+    margin-right: 8px;
     
 }
 
 
-.text,h2,#foot p, #foot a{
-    color: white;
+a{
+    text-decoration: none;
 }
 
-.text, abbr, span {
-    text-decoration: none;
+p, a, h1, h2, h4, h5{
+    color: var(--black);
+    font-family: 'Spectral', serif;
+    
+}
+.weight{
     text-transform: uppercase;
 }
 
-.comment{
-    background-color: #e22d0e;
-    text-transform: none;
-    padding: 40px;
+
+h1{
+    padding-top: 30px; 
+    font-size: 2.2rem;
 }
 
-
-
-.duration{
-    margin: 30px 0;
-    font-style: italic;
-    font-size: 1rem;
-}
-
-.comment p:last-child{
-    font-size: 0.95rem;
-}
-
-.needs{
-    border: 1px solid #dee1e3;
-    margin: 20px 0;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding-bottom: 40px;
+h5, h4{
+    font-size: 0.4rem;
+    font-weight: bold;
     
 }
 
-.needs p{
-    padding: 0 20px;
+#navigation img{
+    width: 35%;
 }
 
-#foot{
-    background-color: #25a2c3;
-    padding: 40px;
-    padding-top: 25px;
-    padding-bottom: 70px;
-    margin-bottom: 0;
-
+#navigation a{
+    font-size: 0.5rem;
+   font-family: 'Roboto', sans-serif;;
 }
 
- #foot i{
-    margin-right: 8px;
-    color: white;
+.get{
+    color: var(--white);
+    padding: 3px 7px;
+    background-color: var(--black);
+    border-radius: 10px;
+    font-size: 0.6rem;
+}
+
+#task{
     
-} 
-
-.right{
-    transform: rotate(-25deg);
-    
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 210px;
+    border-bottom: 0.5px solid var(--black);
 }
 
 
-#foot p, a{
+
+#task p{
+    padding-right: 300px;
+    font-size: .7rem;
+}
+
+#task span a{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.latest_news{
+    display: flex;
+    align-items: center;
+}
+
+.images{
+    margin-right: 5px;
+    width: 3%;
+}
+
+.weight{
+    font-weight: bold;
+}
+
+.corrispondents{
+    display: flex;
+ 
+}
+
+.container{
+    display: flex;
+   margin-top: 10px;
+    
+}
+
+.numbers{
+    display: flex;
+    margin-right:5px;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+.round{
+    width: 15px;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+
+.square{
+    width: 10px;
+   border-top-right-radius: 10%;
+   border-top-left-radius: 15%;
+   border-bottom-right-radius: 15%;
+   border-bottom-left-radius: 10%;
+    
+}
+
+.round1{
+    width: 10px;
+}
+
+.matters a{
+    display: flex;
+    align-items: center;
+    
+}
+
+.year,
+.matters a{
+    margin-bottom: 5px;
+}
+
+#main_content p, .inside{
+    font-size: 0.4rem;
     font-weight: normal;
-    font-size: 0.9rem;
+}
+
+#last_content{
+    padding-bottom: 30px;
     
 }
 
-.copyright p{
-    border-top: 1px solid #fff;
-    
-    width: 200px;
-    margin: 0 auto;
-    margin-top: 30px;
-    padding-top: 20px;
+#all{
+    margin-bottom: 30px;
 }
+
+.merge{
+    
+    width: 100%;
+}
+
+.star{
+    width: 1.5%;
+    position: absolute;
+}
+
+.components a{
+    display: flex;
+    align-items: center;
+}
+
+.round2{
+    width: 3%;
+    border-radius: 100%;
+}
+
+h2{
+    font-size: .5rem;
+    font-weight: bold;
+}
+
+.artist{
+    display: flex;
+    position: relative;
+    
+    width: 100%;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+
+.family{
+    width: 100px;
+    
+}
+
+.text{
+    width: 160px;
+}
+
+.star1{
+    width: 2.5%;
+    position: absolute;
+    
+}
+
+.components a,
+.components h2,
+.text{
+    margin-bottom: 8px;
+}
+
+
+
+.authors{
+    position: relative;
+}
+
+.icon img{
+    position: absolute;
+    left: -15px;
+    width: 8%;
+    bottom: 0;
+}
+
+.age{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    border-radius: 15px;
+    margin-right: 3px;
+}
+
+.more_articles{
+    display: flex;
+    justify-content: space-between;
+}
+
+h3{
+    font-size: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.aims{
+    margin-bottom: 5px;
+}
+
+.aims ul{
+    display: flex;
+    font-size: 0.4em;
+    
+}
+
+.links ul{
+    display: flex;
+    font-size: 0.4em;
+    
+}
+
+.aims ul li{
+   margin-right: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    border-radius: 2px; 
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.last{
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);;
+}
+
+.links ul li{
+    margin: 3px 0;
+   margin-right: 3px;
+}
+
+.goal{
+    margin-left: 25px;
+}
+
