@@ -15,3 +15,11 @@ function behave() {
 }
 
 document.addEventListener("scroll", behave);
+
+ let letterM = document.querySelectorAll(".multiple")
+ for(i = 0; i < letterM.length; i++){
+   let randomize = Math.floor(Math.random() * letterM[i]);
+   randomize.toggle.classList.add(".multiple");
+ }
+
+
