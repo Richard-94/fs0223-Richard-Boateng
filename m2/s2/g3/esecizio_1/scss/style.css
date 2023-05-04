@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Spectral&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pb-5px {
+  padding: 5px;
+}
+
+.pb-10px {
+  padding: 10px;
+}
+
+.pb-15px {
+  padding: 15px;
+}
+
+.pb-20px {
+  padding: 20px;
+}
+
+.pb-25px {
+  padding: 25px;
+}
+
+.pb-30px {
+  padding: 30px;
+}
+
+.mb-5px {
+  margin: 5px;
+}
+
+.mb-10px {
+  margin: 10px;
+}
+
+.mb-15px {
+  margin: 15px;
+}
+
+.mb-20px {
+  margin: 20px;
+}
+
+.mb-25px {
+  margin: 25px;
+}
+
+.mb-30px {
+  margin: 30px;
+}
+
+#head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#head ul {
+  display: flex;
+}
+
+.bc-blue {
+  background-color: blue;
+}
+
+.bc-yellow {
+  background-color: yellow;
+}
+
+.bc-green {
+  background-color: green;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+}
+ #main{
+    background-color: red;
+    p{
+        font-size: 2rem;
+        span{  
+            color: blue;
+        }
+    }
+    a{
+        text-decoration: none;
+        h1:after{
+            content:"call me";
+            color:yellow;
+            margin-left: 50px;
+            height: 50px;
+            width: 60px;
+            border: 1px solid black;
+            display: block;
+            &:hover{
+                background-color: #fff;
+            }
+        }
+    }
+    ul{
+        list-style: none;
+        li{
+            color: palegoldenrod;
+        }
+    }
+ }
+
+ $main-margin:20px;
+ $primary-color:orange;
+
+
+ article{
+    margin-top: $main-margin;
+    p{
+        color: $primary-color;
+    }
+ }

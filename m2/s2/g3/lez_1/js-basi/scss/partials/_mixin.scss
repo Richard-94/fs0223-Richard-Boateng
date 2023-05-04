@@ -1,0 +1,11 @@
+@mixin basicStyles{
+    border: 1px solid yellow;
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+}
+
+@mixin custom($custom-font-size){
+    border: 1 px solid;
+    font-size: $custom-font-size;
+    letter-spacing: 2rem;
+}

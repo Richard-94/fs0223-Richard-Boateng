@@ -1,0 +1,14 @@
+$bc:  blue,yellow, green;
+
+@each $colors in $bc {
+    .bc-#{$colors}{
+        background-color: $colors;
+    }
+}
+
+
+
+
+
+
+

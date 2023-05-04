@@ -1,0 +1,18 @@
+
+
+$pb: 5px, 10px, 15px, 20px, 25px, 30px;
+
+@each $pad in $pb{
+    .pb-#{$pad}{
+        padding: $pad;
+    }
+}
+
+$mb: 5px, 10px, 15px, 20px, 25px, 30px;
+
+@each $marg in $mb{
+    .mb-#{$marg}{
+        margin: $marg;
+    }
+}
+
