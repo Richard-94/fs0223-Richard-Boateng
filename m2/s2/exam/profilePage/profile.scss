@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    background-color: black;
+    
+}
+
+
+
+.we-do{
+    border-bottom: 1px solid #686868;
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    color: #fff;
+}
+
+#preference{
+    font-size: 0.8rem;
+}
+
+.who h3{
+    padding-right: 120px !important;
+    background-color: grey !important;
+    
+}
+
+#ratings{
+    color: #fff;
+    background-color: rgb(37, 37, 37);
+    padding: 3px;
+    width: 165px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+
+#edit{
+    width: 20%;
+    color: #686868;
+    border: 1px solid #686868 !important;
+    padding: 1px 4px;
+    a{
+        color: #686868;
+    }
+    
+  }
+
+  .all-maturity{
+  border-bottom: 1px solid #686868;
+}
+
+#preference{
+    font-size: 0.8rem;
+}
+
+#account{
+    border-bottom: 1px solid #686868;
+    
+}
+
+#page button{
+    background-color:black;
+    color: #686868;
+    padding: 5px 20px;
+    border: 1px solid #686868;
+    &:hover{
+        background-color: #fff;
+
+    }
+}
+
+input[type=checkbox] {
+    transform: scale(2);
+    margin-right: 10px;
+    
+    accent-color: black;
+    border-color: 5px solid #686868;
+    
+}
+
+.display{
+    display: inline-block;
+}
+
