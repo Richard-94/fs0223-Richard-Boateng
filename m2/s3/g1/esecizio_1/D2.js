@@ -36,6 +36,15 @@ class Pet{
     this.species = species
     this.breed = breed
   }
+
+  static sameOwner = function(otherPet){
+    if (this.ownerName === otherPet.ownerName){
+      return true
+    }else{
+      return false
+    }
+  }
+
 }
 
 let storage = []
