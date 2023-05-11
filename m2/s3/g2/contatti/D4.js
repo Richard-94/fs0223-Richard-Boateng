@@ -27,7 +27,12 @@ class Person {
 
 function recover(user){
   const transform = JSON.parse(localStorage.getItem("userInformation") || "[]");
-  
+  if(transform.length === 0){
+    store.push( user);
+    const storage = JSON.stringify(store);
+localStorage.setItem('userInformation', storage)
+
+  }
   for(let i = 0; i < transform.length; i++){
     if(transform[i].userName === user.userName){
       return alert("username has been picked");
@@ -79,45 +84,53 @@ saveFile.onclick = (e) => {
 
 
 
-//METODO GET
+// //METODO GET
 
-fetch("https://jsonplaceholder.typicode.com/users")
-.then((res)=>{
-  console.log(res);
-  if(res.ok){
-    return res.json()
-  }else{
-    return new Error("errore nel contattare il server");
-  }
-})
-
-
-.then((data)=>{
-  console.log("lavoro qua dentro " + data);
-})
+// fetch("https://jsonplaceholder.typicode.com/users")
+// .then((res)=>{
+//   console.log(res);
+//   if(res.ok){
+//     return res.json()
+//   }else{
+//     return new Error("errore nel contattare il server");
+//   }
+// })
 
 
-.catch((err)=>{
-  console.log(err);
-})
+// .then((data)=>{
+//   console.log("lavoro qua dentro " + data);
+// })
+
+
+// .catch((err)=>{
+//   console.log(err);
+// })
 
 
 
-// METODO PUT
+// // METODO PUT
 
-fetch("https://jsonplaceholder.typicode.com/albums")
-.then((res)=>{
-if(res.ok){
+// fetch("https://jsonplaceholder.typicode.com/albums")
+// .then((res)=>{
+// if(res.ok){
 
-}else {
-  throw new Error("Errore nell'esecuzione della chiamata")
+// }else {
+//   throw new Error("Errore nell'esecuzione della chiamata")
+// }
+// })
+
+// .then((albums)=>{
+//   console.log(albums);
+// })
+
+// .catch(()=>{
+
+// }),
+
+
+
+const agenda = "https://jsonplaceholder.typicode.com/users"
+
+const getEvents = function(){
+  fectch (agenda)
 }
-})
-
-.then((albums)=>{
-  console.log(albums);
-})
-
-.catch(()=>{
-
-})

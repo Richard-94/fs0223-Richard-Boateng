@@ -16,7 +16,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
   let usersList = document.querySelector('#users-list')
   data.forEach((user) => {
     let div = document.createElement('div');
-    div.classList.add("col-sm-6", "col-sm-6", "col-sm-6",)
+    div.classList.add("col-sm-6", "col-md-4", "col-xl-3")
     
     div.innerHTML = `
     <div class="card">
