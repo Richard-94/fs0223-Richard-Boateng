@@ -1,0 +1,17 @@
+body{
+    background-color: #BEBAD2 !important;
+}
+
+.album{
+    background-color: #E8D9D2 !important;
+}
+
+#right{
+    background-color: lightgray !important;
+}
+
+#second{
+    margin-left: 150px !important;
+    transform: rotate(25deg);
+}
+

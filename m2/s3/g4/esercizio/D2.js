@@ -28,10 +28,10 @@ const loadAll = function loadImages (url) {
     console.log(data);
     let usersList = document.querySelectorAll('.card');
     usersList.forEach((user) => {
-      user.innerHTML = "";
+      
       data.photos.forEach(element => {
         let div = document.createElement('div');
-        div.classList.add("card","col-sm-6","col-sm-6","col-xl-4",)
+        div.classList.add("card","col-sm-6","col-sm-6","col-xl-4")
         div.innerHTML = ` <div class="card mb-4 shadow-sm">
         <img src="${element.src.medium}" class="card-img-top" alt="${element.alt}"></img>
         <div class="card-body">
@@ -47,7 +47,7 @@ const loadAll = function loadImages (url) {
                 View
               </button>
               <button type="button" class="btn btn-sm btn-outline-secondary">
-                Edit
+                hide
               </button>
             </div>
             <small class="text-muted">9 mins</small>
@@ -72,8 +72,8 @@ const loadAll = function loadImages (url) {
 
 
 
-
-let load = document.getElementById("load_images");
+window.onload = function(){
+  let load = document.getElementById("load_images");
 load.addEventListener("click", function() {
   loadAll(PICTURES_URL);
 });
@@ -84,4 +84,6 @@ loadSecondaruPic.addEventListener("click", function() {
 });
 
 
+
+}
 
