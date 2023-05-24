@@ -1,9 +1,9 @@
 abstract class totalIncome{
-    income:number=0;
-    categoryPercentage:number=0;
-    yearExpenses:number=0;
-    percentageOnoutcomes:number=0;
-    iva:number = 0;
+    protected income:number=0;
+    protected categoryPercentage:number=0;
+    protected yearExpenses:number=0;
+    protected percentageOnoutcomes:number=0;
+    protected iva:number = 0;
 
     constructor(income:number, categoryPercentage:number, yearExpenses:number, percentageOutcome:number, iva:number){
         this.income=income;
