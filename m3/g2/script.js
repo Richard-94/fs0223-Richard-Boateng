@@ -56,6 +56,6 @@ var MotherAccount = /** @class */ (function (_super) {
     };
     return MotherAccount;
 }(Account));
-var acc = new MotherAccount(50, 10, 100, 20, 5);
+var acc = new MotherAccount(500, 100, 50, 20, 5);
 console.log(acc.calcolateBalance());
 console.log(acc.monthlyInterest());

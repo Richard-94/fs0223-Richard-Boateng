@@ -47,6 +47,6 @@ class MotherAccount extends Account{
     }
 }
 
-let acc = new MotherAccount(50, 10, 100, 20, 5);
+let acc = new MotherAccount(500, 100, 50, 20, 5);
 console.log(acc.calcolateBalance())
 console.log(acc.monthlyInterest());
