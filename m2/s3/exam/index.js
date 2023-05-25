@@ -1,4 +1,4 @@
-const PRODUCT_URL = "https://striveschool-api.herokuapp.com/api/product/"
+const PRODUCT_URL = "https://646f3c3309ff19b12086d651.mockapi.io/capoabbigliamento/"
 
 const getProducts = function(){
     fetch(PRODUCT_URL,{

@@ -53,7 +53,7 @@ class Category extends totalIncome {
     
 }
 
-let Lawyer = new Category (50000,38,40,20,22);
+let Lawyer = new Category (67500,67,15,100,3500);
 let chef = new Category (30000,80,20,5,22);
 
 
