@@ -1,3 +1,4 @@
+var user = [];
 ;
 var User = /** @class */ (function () {
     function User(recharge, duration) {
@@ -37,9 +38,13 @@ var User = /** @class */ (function () {
                 id: this.callsHistory.length + 1,
                 duration: durationInMinutes,
                 cost: cost_1,
+                date: new Date
             };
             this.callsHistory.push(entry);
-            console.log(this.callsHistory);
+            var call = this.callsHistory[this.callsHistory.length - 1];
+            var callDate = call.date.toLocaleDateString();
+            var callTime = call.date.toLocaleTimeString();
+            console.log("Call ID:", call.id, "| Call Date:", callDate, "| Call Time:", callTime);
             console.log("Total calls: ", this.callsHistory.length);
             console.log("Call duration: ", durationInMinutes, "minutes");
             console.log("Call cost: £", cost_1);
@@ -61,5 +66,9 @@ var User = /** @class */ (function () {
     return User;
 }());
 var user1 = new User(300, 10);
+user.push(user1);
 var user2 = new User(100, 50);
+user.push(user2);
 var user3 = new User(1000, 3000);
+user.push(user3);
+console.log(user);

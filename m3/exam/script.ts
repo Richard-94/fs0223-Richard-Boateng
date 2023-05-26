@@ -1,9 +1,11 @@
-
+let user:User[]=[]
 
  interface CallEntry {
     duration: number
     cost: number,
-    id: number
+    id: number,
+    date:Date
+    
   };
 
 
@@ -70,14 +72,18 @@ class User implements ISmartphone{
         }
 
         const entry: CallEntry = {
-            id: this.callsHistory.length + 1,
-            duration: durationInMinutes,
-            cost: cost,
-            
-          };
+          id: this.callsHistory.length + 1,
+          duration: durationInMinutes,
+          cost: cost,
+          date: new Date
+        };
 
         this.callsHistory.push(entry); 
-        console.log(this.callsHistory);
+        const call = this.callsHistory[this.callsHistory.length - 1];
+        const callDate = call.date.toLocaleDateString();
+        const callTime = call.date.toLocaleTimeString()
+        console.log("Call ID:", call.id, "| Call Date:", callDate, "| Call Time:", callTime);
+  
         
         console.log("Total calls: ", this.callsHistory.length);
         console.log("Call duration: ", durationInMinutes, "minutes");
@@ -105,8 +111,13 @@ class User implements ISmartphone{
 }
 
 const user1 = new User(300,10);
+user.push(user1)
 const user2 = new User(100,50);
+user.push(user2)
 const user3 = new User(1000,3000);
+user.push(user3)
+console.log(user);
+
 
 
 
