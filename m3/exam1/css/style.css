@@ -1,0 +1,16 @@
+body{
+    background-color: #D6D5E8;
+    margin-top: 20px;
+}
+
+/* #image{
+    background-image: url(../img/pexels-darwis-alwan-1454769.jpg);
+    background-repeat: no-repeat;
+    height:  0 ;
+} */
+
+button{
+    margin: 0 60px !important;
+    margin-bottom: 50px !important;
+    
+}

@@ -79,7 +79,7 @@ class User implements ISmartphone{
         };
 
         this.callsHistory.push(entry); 
-        const call = this.callsHistory[this.callsHistory.length];
+        const call = this.callsHistory[this.callsHistory.length-1];
         const callDate = call.date.toLocaleDateString();
         const callTime = call.date.toLocaleTimeString()
         console.log("Call ID:", call.id, "| Call Date:", callDate, "| Call Time:", callTime);
@@ -119,7 +119,30 @@ user.push(user3)
 console.log(user);
 
 
+let time = document.getElementById("time");
+let myDate = new Date();
+const options: Intl.DateTimeFormatOptions = 
+{ hour: 'numeric', 
+minute: 'numeric'
+};
+const callTime = myDate.toLocaleTimeString([], options);
+(time as HTMLElement ).textContent= callTime;
 
 
 
 
+
+
+function respond(event: MouseEvent){
+    const button = event.target as HTMLButtonElement;
+    const text = document.getElementById("floatingTextarea") as HTMLTextAreaElement;
+    if(text !== null){
+        text.value += button.textContent;
+    }
+   
+}
+
+const numbers = document.querySelectorAll(".my-numbers");
+numbers.forEach((number)=>{
+   number.addEventListener("click", respond as EventListener) 
+})
