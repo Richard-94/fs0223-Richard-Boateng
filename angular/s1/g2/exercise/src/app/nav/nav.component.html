@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary text-center justify-content-center">
+  <div class="container-fluid">
+    <a [routerLink]="['/']" class="nav-link active fs-1" aria-current="page">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <ul class="nav nav-pills">
+
+          <a [routerLink]="['/post_attivi']" class="nav-link">Post Attivi</a>
+          <a [routerLink]="['/non-active-post']" class="nav-link">Post Inattivi</a>
+        </ul>
+
+
+      </div>
+    </div>
+  </div>
+</nav>

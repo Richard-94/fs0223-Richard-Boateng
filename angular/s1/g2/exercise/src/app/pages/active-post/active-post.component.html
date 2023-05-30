@@ -1,0 +1,9 @@
+
+
+<div *ngFor="let po of post;">
+  <ng-container *ngIf="po.active === 'true'">
+    <h2 class="bg-success p-2">{{'Post'}}</h2>
+    <h3>{{po.title}}</h3>
+    <p>{{po.body}}</p>
+  </ng-container>
+</div>
