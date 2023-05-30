@@ -1,8 +1,8 @@
  export class Post {
 
-  body!:string
-  title!: string;
-  active!: boolean;
+  body:string
+  title: string;
+  active: boolean;
 
   constructor(body:string,title:string,active:boolean){
     this.body = body;
