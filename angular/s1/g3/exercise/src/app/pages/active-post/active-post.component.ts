@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Post } from 'src/app/Models/post';
 
 import { PostService } from 'src/app/post.service';
 
@@ -8,12 +9,23 @@ import { PostService } from 'src/app/post.service';
   styleUrls: ['./active-post.component.scss']
 })
 export class ActivePostComponent {
+
+
+
    post:any[] = []
+
+   @Input() posts!: Post[];
+
+   disactivate(post: Post) {
+
+  }
 
    constructor (private postService: PostService){
     this.postService.getPost()
     .then(posts => this.post = posts)
     .catch(error => console.error('Error fetching posts:', error));
    }
+
+
 
 }

@@ -1,10 +1,13 @@
 
 
 <div *ngFor="let po of post;">
-  <div *ngIf="po.active === 'true'">
+  <div *ngIf="po.active">
     <h2 class="bg-success p-2">{{'Post'}}</h2>
     <h3>{{po.title}}</h3>
     <p>{{po.body}}</p>
     <p>{{po.active}}</p>
+    <button
+    (click)="disactivate(po)"
+    type="button" class="btn btn-primary btn-sm mb-5">disactivate</button>
   </div>
 </div>

@@ -1,0 +1,17 @@
+
+
+<div
+
+*ngFor="let po of post;">
+  <div *ngIf="!po.active">
+    <h2 class="bg-secondary p-2">{{'Post'}}</h2>
+    <h3>{{po.title}}</h3>
+    <p>{{po.body}}</p>
+    <p>{{po.active}}</p>
+    <button
+    (click)="delete(po)"
+    type="button" class="btn btn-primary btn-sm mb-5">activate</button>
+  </div>
+</div>
+
+
