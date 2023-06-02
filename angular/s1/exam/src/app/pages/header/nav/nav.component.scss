@@ -1,0 +1,41 @@
+a{
+  text-decoration: none;
+}
+
+
+.navigation{
+  text-align: center;
+  h1{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    a{
+      color: red;
+    }
+  }
+
+  ul{
+    a{
+      margin: 0 100px;
+      font-size: 2rem;
+      color: burlywood;
+      padding: 10px;
+      border: 1px black solid;
+      border-radius: 10px;
+
+    }
+    .do{
+      &:hover{
+        background-color: dodgerblue;
+      }
+    }
+
+    .complete{
+      &:hover{
+        background-color: green;
+      }
+    }
+
+  }
+}
+
+

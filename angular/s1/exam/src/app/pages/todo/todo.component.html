@@ -1,0 +1,23 @@
+
+<div class="results">
+
+  <ul>
+    <li *ngFor="let todo of todos">
+      {{ todo.title }} <i class="bi bi-check-circle-fill"></i>
+    </li>
+  </ul>
+
+
+
+  <form>
+
+    <input [(ngModel)]="newTodo.title" type="text"  placeholder="title" name="title">
+
+      <button (click)="elaborate()">create</button>
+    </form>
+
+
+</div>
+
+
+

@@ -9,6 +9,8 @@ import { NonActivePostComponent } from './pages/non-active-post/non-active-post.
 import { ButtonsComponent } from './buttons/buttons.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
+import { CapsDirective } from './caps.directive';
+import { CapitalPipe } from './capital.pipe';
 
 
 
@@ -21,6 +23,8 @@ import { NavComponent } from './nav/nav.component';
     ButtonsComponent,
     HeaderComponent,
     NavComponent,
+    CapsDirective,
+    CapitalPipe,
 
 
   ],
