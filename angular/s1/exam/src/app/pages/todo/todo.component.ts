@@ -9,12 +9,14 @@ import { TodoListService } from 'src/app/todo-list.service';
 })
 export class TodoComponent {
   todos: List[] = [];
-  newTodo:List = new List("", false);
+  newTodo:List = new List("", false, 0);
+  inputError: boolean | undefined;
 
   constructor(private showTodo: TodoListService){}
 
-  ngOnInit() {
+  ngOnInit():void {
     this.getList();
+
   }
 
   getList() {
@@ -22,13 +24,26 @@ export class TodoComponent {
       .then(res => this.todos = res);
   }
 
+  switchTask(todo:List):void{
+    this.showTodo.switchTask(todo);
+    const index = this.todos.findIndex(task => task.id === todo.id);
+    if (index !== -1) {
+      this.todos.splice(index, 1);
+    }
+  }
+
   elaborate(){
+    if (this.newTodo.title.trim() === '') {
+      this.inputError = false;
+    }else {
+      this.inputError = true;
     this.showTodo.showList(this.newTodo)
     .then(res => {
       console.log(res)
-      this.newTodo = new List('', false);
+      this.newTodo = new List('', false, 0);
       this.getList()
       });
+  }
   }
 
 }

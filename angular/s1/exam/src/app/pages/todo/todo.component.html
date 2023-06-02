@@ -3,7 +3,9 @@
 
   <ul>
     <li *ngFor="let todo of todos">
-      {{ todo.title }} <i class="bi bi-check-circle-fill"></i>
+      {{ todo.title }}
+
+      <i (click)="switchTask(todo)" class="bi bi-check-circle-fill"></i>
     </li>
   </ul>
 
@@ -13,7 +15,9 @@
 
     <input [(ngModel)]="newTodo.title" type="text"  placeholder="title" name="title">
 
-      <button (click)="elaborate()">create</button>
+
+      <button (click)="elaborate()" [disabled]="!(newTodo.title.trim() !== '')">create</button>
+      <!-- <p *ngIf="inputError" class="error">Input cannot be empty!</p> -->
     </form>
 
 

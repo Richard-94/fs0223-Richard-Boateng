@@ -5,8 +5,13 @@ import { List } from './Models/list';
   providedIn: 'root'
 })
 export class TodoListService {
+  showActivePost(arg0: boolean): any {
+    throw new Error('Method not implemented.');
+  }
+ private task:List[]=[]
 
   address:string = 'http://localhost:3000/todo'
+
 
   constructor() { }
   async getList():Promise<List[]>{
@@ -22,5 +27,16 @@ export class TodoListService {
     });
     return await response.json();
   }
+
+
+ showTask(status:boolean):List[]{
+  return this.task.filter(tod => tod.completed === status);
+ }
+
+ switchTask(newTask: List): void {
+  newTask.completed = !newTask.completed;
+  this.task.push(newTask);
+}
+
 
 }
