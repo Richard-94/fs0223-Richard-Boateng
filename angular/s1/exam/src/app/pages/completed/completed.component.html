@@ -1,7 +1,8 @@
 <ul>
   <li *ngFor="let todo of todos">
     {{ todo.title }} <i class="bi bi-check2-square"></i>
-
-
+    <i (click)="eliminate(todo.id)" class="bi bi-trash3-fill"></i>
   </li>
+
+
 </ul>

@@ -54,4 +54,11 @@ export class TodoListService {
   return await response.json();
 }
 
+async eliminateTask(id:number = 0){
+  const response = await fetch(this.address + '/' + id, {
+    method: 'DELETE',
+  });
+  return await response.json();
+}
+
 }

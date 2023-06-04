@@ -12,7 +12,7 @@ export class CompletedComponent {
   newTodo:List = new List("", false, 0);
   inputError: boolean | undefined;
 
-  constructor(private showTodo: TodoListService){}
+  constructor(private showTodo:TodoListService){}
 
   ngOnInit():void {
     this.getCompletedTodos();
@@ -28,6 +28,15 @@ export class CompletedComponent {
     todo.completed = !todo.completed;
     this.showTodo.switchTask(todo);
     this.getCompletedTodos();
+  }
+
+  eliminate(id?:number){
+    this.showTodo.eliminateTask(id)
+    .then(res =>{
+      //alert("task eliminated");
+      this.getCompletedTodos()
+    })
+
   }
 
 }
