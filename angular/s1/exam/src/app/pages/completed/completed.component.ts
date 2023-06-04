@@ -30,13 +30,20 @@ export class CompletedComponent {
     this.getCompletedTodos();
   }
 
-  eliminate(id?:number){
+  eliminate(id?: number) {
     this.showTodo.eliminateTask(id)
-    .then(res =>{
-      //alert("task eliminated");
-      this.getCompletedTodos()
-    })
-
+      .then(() => {
+        const index = this.todos.findIndex(task => task.id === id);
+        if (index !== -1) {
+          this.todos.splice(index, 1);
+        }
+      })
+      .catch(error => {
+        console.error('Error deleting task:', error);
+      });
   }
 
+
+
 }
+

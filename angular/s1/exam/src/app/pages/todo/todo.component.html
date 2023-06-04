@@ -1,13 +1,16 @@
 
 <div class="results">
 
-  <ul>
-    <li *ngFor="let todo of todos">
+  <ul  *ngFor="let todo of todos">
+    <li>
       {{ todo.title }}
 
-      <i (click)="switchTask(todo)" class="bi bi-check-circle-fill"></i>
-      <a [routerLink]="['/todo','update',todo.id]" >Modifica</a>
     </li>
+    <div class="objects">
+
+      <i (click)="switchTask(todo)" class="bi bi-check-circle-fill"></i>
+      <a [routerLink]="['/todo','update',todo.id]">modify</a>
+    </div>
   </ul>
 
 
