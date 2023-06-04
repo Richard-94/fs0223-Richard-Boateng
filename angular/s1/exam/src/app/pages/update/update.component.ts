@@ -11,7 +11,6 @@ import { TodoListService } from 'src/app/todo-list.service';
 export class UpdateComponent {
   newTodo:List = new List("", false, 0);
 
-
   constructor(
     private showTodo: TodoListService,
     private router: ActivatedRoute){}
@@ -30,8 +29,6 @@ export class UpdateComponent {
     this.showTodo.changesToTask(this.newTodo)
     .then(res => console.log(res));
     this.newTodo = new List('', false, 0);
-
   }
 
 }
-

@@ -36,7 +36,7 @@ export class TodoComponent {
     const index = this.todos.findIndex(task => task.id === todo.id);
     if (index !== -1) {
       this.todos.splice(index, 1);
-     localStorage.setItem('completedTodos', JSON.stringify(this.todos));
+      //localStorage.setItem('completedTodos', JSON.stringify(this.todos));
     }
   }
 

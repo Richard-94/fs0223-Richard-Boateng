@@ -36,12 +36,14 @@ export class CompletedComponent {
         const index = this.todos.findIndex(task => task.id === id);
         if (index !== -1) {
           this.todos.splice(index, 1);
+          this.todos = [...this.todos]; // Reassign the array reference
         }
       })
       .catch(error => {
         console.error('Error deleting task:', error);
       });
   }
+
 
 
 
