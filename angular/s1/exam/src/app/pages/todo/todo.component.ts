@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { List } from 'src/app/Models/list';
 import { TodoListService } from 'src/app/todo-list.service';
 
@@ -12,11 +13,17 @@ export class TodoComponent {
   newTodo:List = new List("", false, 0);
   inputError: boolean | undefined;
 
-  constructor(private showTodo: TodoListService){}
+  constructor(
+    private showTodo: TodoListService,
+    private router: ActivatedRoute){}
 
-  ngOnInit():void {
-    this.getList();
-
+  ngOnInit(): void {
+    const completedTodos = localStorage.getItem('completedTodos');
+    if (completedTodos) {
+      this.todos = JSON.parse(completedTodos);
+    } else {
+      this.getList();
+    }
   }
 
   getList() {
@@ -24,26 +31,29 @@ export class TodoComponent {
       .then(res => this.todos = res);
   }
 
-  switchTask(todo:List):void{
+  switchTask(todo: List): void {
     this.showTodo.switchTask(todo);
     const index = this.todos.findIndex(task => task.id === todo.id);
     if (index !== -1) {
       this.todos.splice(index, 1);
+      localStorage.setItem('completedTodos', JSON.stringify(this.todos));
     }
   }
 
-  elaborate(){
+  elaborate() {
     if (this.newTodo.title.trim() === '') {
       this.inputError = false;
-    }else {
+    } else {
       this.inputError = true;
-    this.showTodo.showList(this.newTodo)
-    .then(res => {
-      console.log(res)
-      this.newTodo = new List('', false, 0);
-      this.getList()
-      });
+      this.showTodo.showList(this.newTodo)
+        .then(res => {
+          console.log(res)
+          this.newTodo = new List('', false, 0);
+          this.getList();
+        });
+    }
   }
-  }
+
+
 
 }

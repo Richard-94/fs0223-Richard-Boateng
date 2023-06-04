@@ -9,6 +9,7 @@ import { CompletedComponent } from './pages/completed/completed.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { NavComponent } from './pages/header/nav/nav.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateComponent } from './pages/update/update.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     CompletedComponent,
     HeaderComponent,
     NavComponent,
+    UpdateComponent,
 
   ],
   imports: [

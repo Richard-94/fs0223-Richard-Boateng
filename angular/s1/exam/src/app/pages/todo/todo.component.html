@@ -6,6 +6,7 @@
       {{ todo.title }}
 
       <i (click)="switchTask(todo)" class="bi bi-check-circle-fill"></i>
+      <a [routerLink]="['/todo','update',todo.id]" >Modifica</a>
     </li>
   </ul>
 
