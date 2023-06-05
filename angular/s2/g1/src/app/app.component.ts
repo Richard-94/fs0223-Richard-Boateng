@@ -27,7 +27,7 @@ export class AppComponent implements OnInit{
       const index = this.picArray.findIndex(cancel => cancel.id ===id);
       if(index !==-1){
         this.picArray.splice(index, 1);
-        this.picArray = [...this.picArray]
+        this.picArray = [...this.picArray];
       }
     })
   }
