@@ -3,14 +3,14 @@
   <div>
     <div class="row g-5 d-flex" >
       <div *ngFor="let photos of picArray" class="col-xl-3">
-        <p class="fw-bold fs-4">Totale Foto favorite = 0</p>
+        <p class="fw-bold fs-4">Totale Foto favorite =  {{ getFavoriteCount(photos.id) }}</p>
         <div class="card">
           <img src="{{photos.url}}" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">{{photos.title}}</p>
             <div class="d-flex justify-content-between">
-              <button class="btn btn-danger">Elimina</button>
-            <button class="btn btn-success">Mi piace</button>
+              <button (click)="eliminate(photos.id)" class="btn btn-danger">Elimina</button>
+            <button (click)="modify(photos.id)" class="btn btn-success">Mi piace</button>
             </div>
 
           </div>

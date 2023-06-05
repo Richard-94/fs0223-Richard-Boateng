@@ -9,6 +9,7 @@ import { Album } from './Models/album';
 })
 export class AppComponent implements OnInit{
   title = 'app';
+  favoriteCounts: { [key: number]: number } = {};
 
   constructor(private allPicture:PicturesService){}
 
@@ -20,7 +21,29 @@ export class AppComponent implements OnInit{
     })
   }
 
+  eliminate(id:number){
+    this.allPicture.deletePic(id)
+    .subscribe(res =>{
+      const index = this.picArray.findIndex(cancel => cancel.id ===id);
+      if(index !==-1){
+        this.picArray.splice(index, 1);
+        this.picArray = [...this.picArray]
+      }
+    })
+  }
 
+  modify(id: number) {
+
+    if (this.favoriteCounts[id]) {
+      this.favoriteCounts[id]++;
+    } else {
+      this.favoriteCounts[id] = 1;
+    }
+  }
+
+  getFavoriteCount(id: number): number {
+    return this.favoriteCounts[id] || 0;
+  }
 
 
 }
