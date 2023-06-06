@@ -1,0 +1,46 @@
+<form (ngSubmit)="submit(formData)" class="text-center" #formData="ngForm">
+  <div ngModelGroup="autenticate" #autenticateGroup = "ngModelGroup">
+    <div>
+      <p>Name</p>
+      <input type="text" placeholder="Nome" ngModel name="nome" required>
+    </div>
+    <span *ngIf="autenticateGroup.invalid">Campo Obbligatorio</span>
+
+    <div class="mt-5">
+      <p>Alter Ego</p>
+      <input type="text" placeholder="Alter ego"  ngModel  name="alter ego" required>
+    </div>
+
+    <span *ngIf="autenticateGroup.invalid">Campo Obbligatorio</span>
+  </div>
+
+
+  <div class="mt-5">
+    <p></p>
+    <select name="powers" id=""  ngModel >
+      <option value="" selected>--Super Powers--</option>
+      <option value="invisible">Invisible</option>
+      <option value="fly">Flying</option>
+      <option value="resistance">Resistance</option>
+    </select>
+  </div>
+
+  <div class="mt-5">
+    <p>Enemy</p>
+    <input type="text" placeholder="enemy"  ngModel  name="enemy"  maxlength="10">
+  </div>
+
+  <div class="mt-5">
+    <p>Planet</p>
+    <input type="text" #planet="ngModel" placeholder="planet" required ngModel  name="planet" maxlength="5">
+
+  </div>
+  <span *ngIf="planet.invalid">Max 5 characters</span>
+
+  <div class="mt-5">
+    <p>Weakness</p>
+    <input type="text" placeholder="weakness"  ngModel  name="weakness">
+  </div>
+
+  <button [disabled]="formData.invalid" class="btn btn-success mt-5">create</button>
+</form>

@@ -1,0 +1,56 @@
+<form [formGroup]="form">
+  <div>
+    <div>
+      <p>Name</p>
+      <input type="text" placeholder="Nome" name="nome" required>
+    </div>
+
+
+    <div class="mt-5">
+      <p>Alter Ego</p>
+      <input type="text" placeholder="Alter_ego"   name="alter_ego" required>
+    </div>
+
+
+  </div>
+
+
+  <div class="mt-5">
+    <p></p>
+    <select name="powers" id=""  >
+      <option value="" selected>--Super Powers--</option>
+      <option value="invisible">Invisible</option>
+      <option value="fly">Flying</option>
+      <option value="resistance">Resistance</option>
+    </select>
+  </div>
+
+  <div class="mt-5">
+    <p>Enemy</p>
+    <input type="text" placeholder="enemy" name="enemy"  maxlength="10">
+  </div>
+
+  <div class="mt-5">
+    <p>Planet</p>
+    <input type="text"  placeholder="planet" required name="planet" maxlength="5">
+
+  </div>
+
+
+  <div class="mt-5">
+    <p>Weakness</p>
+    <input type="text" placeholder="weakness"  name="weakness">
+  </div>
+
+  <div>
+    <h6>super powers</h6>
+    <button class="btn btn-warning" (click)="addPowers()">Aggiungi potere</button>
+    <div class="form-group" *ngFor="let sport of getPowers(), let i = index">
+      <input type="text" class="form-control" [formControlName]="i">
+    </div>
+  </div>
+
+
+  <button [disabled]="form.invalid" class="btn btn-success mt-5">create</button>
+</form>
+
