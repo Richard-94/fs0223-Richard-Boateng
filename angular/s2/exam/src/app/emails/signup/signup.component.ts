@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Template } from 'src/app/form/template';
 import { matchValidator } from './validate/match';
+import { UniqueValidatorService } from './validate/unique-name.service';
 
 @Component({
   selector: 'app-signup',
@@ -54,22 +55,19 @@ export class SignupComponent implements OnInit{
     ]),
 
 
-    username:new FormControl('',[
+    username:new FormControl('',
+    [
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(20),
       Validators.pattern(/^[a-z0-9]+$/)
-    ]),
+    ],
+    [this.uniqueValidator.validate.bind(this.uniqueValidator)])
 
   }, {validators: matchValidator })
 
-  constructor(){
+  constructor(private uniqueValidator: UniqueValidatorService) { }
 
-  }
-
-  setInputClicked(value: boolean) {
-    this.isInputClicked = value;
-  }
 
   ngOnInit(): void {
     const nameControl = this.authForm.get('name') as FormControl;
