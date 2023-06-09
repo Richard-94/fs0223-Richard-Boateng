@@ -58,9 +58,9 @@ export class SignupComponent implements OnInit{
     username:new FormControl('',
     [
       Validators.required,
-      Validators.minLength(5),
-      Validators.maxLength(20),
-      Validators.pattern(/^[a-z0-9]+$/)
+      // Validators.minLength(5),
+      // Validators.maxLength(20),
+      // Validators.pattern(/^[a-z0-9]+$/)
     ],
     [this.uniqueValidator.validate.bind(this.uniqueValidator)])
 
