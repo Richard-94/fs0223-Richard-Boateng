@@ -1,12 +1,18 @@
 
-<div class="container-fluid">
+<div class="container-fluid text-center">
   <div class="col-xs-12">
     <h1>Recipe Name</h1>
   </div>
 
   <div class="row">
     <div class="col-xs-12">
-      <div class="btn-group">
+      <div *ngFor="let recipe of recipes">
+        <img [src]="recipe.imagePath" class="w-70" alt="...">
+        <h1 class="card-title">{{recipe.name}}</h1>
+        <p class="card-text">{{recipe.description}}</p>
+      </div>
+
+      <div class="btn-group mt-5">
         <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
             Manage Recipe
