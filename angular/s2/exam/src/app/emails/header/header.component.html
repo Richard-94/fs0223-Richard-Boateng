@@ -1,0 +1,47 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+	<div class="container-fluid ">
+		<a class="navbar-brand mt-0" [routerLink]="'.'">Recipe Book</a>
+
+
+		<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
+
+
+		<div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse align-items-center">
+      <div class="col">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+
+            <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Shopping List</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <ul>
+        <div class="row">
+          <div class="col m-0">
+            <div ngbDropdown class="d-inline-block">
+              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                Manage
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem>Action - 1</button>
+                <button ngbDropdownItem>Another Action</button>
+                <button ngbDropdownItem>Something else is here</button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </ul>
+		</div>
+	</div>
+</nav>
+
+

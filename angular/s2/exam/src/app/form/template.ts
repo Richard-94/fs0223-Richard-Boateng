@@ -4,8 +4,8 @@ export interface Template {
   surname:string;
   //email:string;
   password:number;
-  telephoneNumber:number;
-  dateOfBirth:number;
+  telephone:number;
+  birth:number;
   username:string;
   //confirmation:boolean;
 }

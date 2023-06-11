@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AsyncValidatorFn, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Template } from 'src/app/form/template';
 import { matchValidator } from './validate/match';
-import { UniqueValidatorService } from './validate/unique-name.service';
+import { Registration } from './registration';
+
+
 
 @Component({
   selector: 'app-signup',
@@ -61,12 +63,11 @@ export class SignupComponent implements OnInit{
       // Validators.minLength(5),
       // Validators.maxLength(20),
       // Validators.pattern(/^[a-z0-9]+$/)
-    ],
-    [this.uniqueValidator.validate.bind(this.uniqueValidator)])
+    ])
 
   }, {validators: matchValidator })
 
-  constructor(private uniqueValidator: UniqueValidatorService) { }
+
 
 
   ngOnInit(): void {
@@ -83,6 +84,16 @@ export class SignupComponent implements OnInit{
       surnameControl.setValue(uppercaseValue, { emitEvent: false });
     });
   }
+
+  data:Registration= {
+    email: '',
+    password: '',
+    name: '',
+    surname: '',
+    username: '',
+    dateOfBirth: 0,
+    telephoneNumber: 0
+  };
 
 }
 
