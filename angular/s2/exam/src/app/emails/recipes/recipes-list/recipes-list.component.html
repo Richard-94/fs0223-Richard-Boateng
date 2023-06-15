@@ -1,19 +1,14 @@
 <div class="container-fluid m-5">
   <div class="row">
-
-  <div *ngFor="let recipe of recipes" class="card" style="width: 18rem;">
-    <img [src]="recipe.imagePath" class="w-100" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{recipe.name}}</h5>
-      <p class="card-text">{{recipe.description}}</p>
-      <a [routerLink]="['/emails','recipe-details']" class="btn btn-primary">Details</a>
+    <div *ngFor="let recipe of recipes" class="card" style="width: 18rem;">
+      <img [src]="recipe.imagePath" class="w-100" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{recipe.name}}</h5>
+        <p class="card-text">{{recipe.description}}</p>
+        <a [routerLink]="['/emails/recipe-details', recipe.id ]" class="btn btn-primary">Details</a>
+      </div>
     </div>
   </div>
-  </div>
-
-
 </div>
-
-<app-recipes-item></app-recipes-item>
 
 

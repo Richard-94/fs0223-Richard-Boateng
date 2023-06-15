@@ -8,13 +8,19 @@ import { Ingredients } from 'src/app/shared/ingredients';
 })
 export class ShoppingListComponent implements OnInit {
 ingredients:Ingredients[]=[
-  new Ingredients('Apples', 5),
-  new Ingredients('Tomatoes', 10),
+
+
 ]
 
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
+  }
+
+  onIngredientAdded(ingredient:Ingredients){
+    this.ingredients.push(ingredient);
+
+
   }
 
 }
