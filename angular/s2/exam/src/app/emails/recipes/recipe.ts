@@ -12,6 +12,7 @@ export class Recipe {
     this.description = desc;
     this.imagePath = imagePath;
     this.id = id;
-    this.ingredients = [];
+    this.ingredients = ingredients || [];
   }
 }
+

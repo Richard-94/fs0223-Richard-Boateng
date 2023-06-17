@@ -5,7 +5,7 @@ import { EmailsRoutingModule } from './emails-routing.module';
 import { EmailsComponent } from './emails.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignupComponent } from './signup/signup.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
 import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
@@ -14,6 +14,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 
 import { HeaderComponent } from './header/header.component';
 import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
 
 
 
@@ -29,15 +30,16 @@ import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap
     ShoppingListComponent,
     ShoppingEditComponent,
 
-    HeaderComponent
+    HeaderComponent,
+     RecipesEditComponent
   ],
   imports: [
     CommonModule,
     EmailsRoutingModule,
     ReactiveFormsModule,
     NgbCollapseModule,
-    NgbDropdownModule
-
+    NgbDropdownModule,
+    FormsModule
   ]
 })
 export class EmailsModule { }

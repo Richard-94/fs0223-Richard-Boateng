@@ -3,53 +3,43 @@
     <h1>Recipe Name</h1>
   </div>
 
-
-
   <div class="row">
     <div class="col-xs-12">
       <div *ngIf="recipe">
-        <img [src]="recipe.imagePath" class="w-25" alt="...">
-        <h1 class="card-title">{{recipe.name}}</h1>
-        <p class="card-text">{{recipe.description}}</p>
-        ss
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let ingredient of recipe?.ingredients">
-            {{ ingredient.name }} - {{ ingredient.amount }}
-          </li>
-        </ul>
-
-
-      </div>
-
-      <div class="btn-group mt-5">
-        <div ngbDropdown class="d-inline-block">
-          <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-            Manage Recipe
-          </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button ngbDropdownItem>To Shopping List</button>
-            <button ngbDropdownItem>Edit Recipe</button>
-            <button ngbDropdownItem>Delete Recipe</button>
+        <div class="row">
+          <div class="col-xs-12">
+            <img [src]="recipe.imagePath" class="w-25" alt="Recipe Image">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="card-title">{{ recipe.name }}</h1>
+            <p class="card-text">{{ recipe.description }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+                {{ ingredient.name }} - {{ ingredient.amount }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-
-
-      <div class="row">
-        <div class="col-xs-12">
-          <ul class="list-group">
-            <li class="list-group-item" *ngFor="let ingredient of recipe?.ingredients">
-              {{ ingredient.name }} - {{ ingredient.amount }}
-            </li>
-          </ul>
-        </div>
-      </div>
-
-
-
-
     </div>
   </div>
 
+  <div class="btn-group mt-5">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+        Manage Recipe
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>To Shopping List</button>
+        <button ngbDropdownItem><a [routerLink]="['/emails','header']">Edit Recipe</a></button>
+        <button ngbDropdownItem>Delete Recipe</button>
+      </div>
+    </div>
+  </div>
 </div>
-

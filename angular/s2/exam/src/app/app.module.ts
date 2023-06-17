@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { EmailsModule } from './emails/emails.module';
 import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     EmailsModule,
     NgbModule,
     HttpClientModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

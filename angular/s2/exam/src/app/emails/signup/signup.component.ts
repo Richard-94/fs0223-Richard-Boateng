@@ -95,5 +95,11 @@ export class SignupComponent implements OnInit{
     telephoneNumber: 0
   };
 
+  onsubmit(){
+    this.authForm.reset()
+    console.log(this.authForm);
+
+  }
+
 }
 
