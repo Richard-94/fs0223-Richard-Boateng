@@ -5,17 +5,16 @@ import { EmailsRoutingModule } from './emails-routing.module';
 import { EmailsComponent } from './emails.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignupComponent } from './signup/signup.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.component';
 import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
-import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
-import { AllRecipesService } from './recipes/all-recipes.service';
+import { AllRecipesService } from './all-recipes.service';
 
 
 
@@ -31,10 +30,8 @@ import { AllRecipesService } from './recipes/all-recipes.service';
     ShoppingListComponent,
     ShoppingEditComponent,
 
-    HeaderComponent,
-     RecipesEditComponent
+    HeaderComponent
   ],
-
   imports: [
     CommonModule,
     EmailsRoutingModule,
@@ -42,8 +39,8 @@ import { AllRecipesService } from './recipes/all-recipes.service';
     NgbCollapseModule,
     NgbDropdownModule,
     FormsModule
+
   ],
-
-
+  providers: [AllRecipesService],
 })
 export class EmailsModule { }

@@ -17,7 +17,8 @@ const routes: Routes = [
   {path:'shopping-list', component:ShoppingListComponent},
   {path:'recipe-details/:id', component:RecipesDetailComponent},
   {path:'header', component:HeaderComponent},
-  { path: 'emails/recipe-edit/:id', component: RecipesEditComponent},
+  { path: 'emails/header/:recipeId', component:HeaderComponent},
+  // { path: 'recipe-edit', component: RecipesEditComponent},
 ];
 
 @NgModule({

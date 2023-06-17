@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Recipe } from './recipe';
+import { Recipe } from './recipes/recipe';
 import { Ingredients } from 'src/app/shared/ingredients';
 import { Subject } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class AllRecipesService {
-  recipeSelected = new Subject<Recipe>();
+ //recipeSelected = new Subject<Recipe>();
   startEditing = new Subject<number>();
 
   recipes: Recipe[] = [
@@ -53,9 +53,9 @@ export class AllRecipesService {
   }
 
   getRecipeById(index: number): Recipe | undefined {
-    return this.recipes.find(recipe => recipe.id === index);
-
-
+    return this.recipes[index];
   }
 
+
 }
+
