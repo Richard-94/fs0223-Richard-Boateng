@@ -7,6 +7,7 @@ import { EmailsModule } from './emails/emails.module';
 import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AllRecipesService } from './emails/recipes/all-recipes.service';
 
 
 @NgModule({
@@ -24,9 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgbCollapseModule,
     FormsModule,
     ReactiveFormsModule
-
   ],
-  providers: [],
+  providers: [AllRecipesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

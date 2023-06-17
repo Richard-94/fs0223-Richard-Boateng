@@ -8,6 +8,8 @@ import { Subject } from 'rxjs';
 })
 export class AllRecipesService {
   recipeSelected = new Subject<Recipe>();
+  startEditing = new Subject<number>();
+
   recipes: Recipe[] = [
     new Recipe(
       'A test',
@@ -29,16 +31,31 @@ export class AllRecipesService {
         new Ingredients('plantain', 10),
 
       ]
+    ),
+    new Recipe(
+      'yam',
+      'ampesie',
+      'https://static.finmail.com/wp-content/uploads/2020/06/18155318/IMG_1573.jpg',
+      2,
+      [
+        new Ingredients('plantain', 10),
+
+      ]
     )
   ];
 
-  constructor() {}
+
+
+
 
   getRecipes(): Recipe[] {
     return this.recipes.slice();
   }
 
-  getRecipeById(index: number): Recipe {
-    return this.recipes[index];
+  getRecipeById(index: number): Recipe | undefined {
+    return this.recipes.find(recipe => recipe.id === index);
+
+
   }
+
 }

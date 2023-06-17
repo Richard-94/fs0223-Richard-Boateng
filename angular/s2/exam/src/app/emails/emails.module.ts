@@ -15,6 +15,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { HeaderComponent } from './header/header.component';
 import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
+import { AllRecipesService } from './recipes/all-recipes.service';
 
 
 
@@ -33,6 +34,7 @@ import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.compon
     HeaderComponent,
      RecipesEditComponent
   ],
+
   imports: [
     CommonModule,
     EmailsRoutingModule,
@@ -40,6 +42,8 @@ import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.compon
     NgbCollapseModule,
     NgbDropdownModule,
     FormsModule
-  ]
+  ],
+
+
 })
 export class EmailsModule { }
