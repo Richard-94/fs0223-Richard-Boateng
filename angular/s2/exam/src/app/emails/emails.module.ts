@@ -35,7 +35,7 @@ import { AllRecipesService } from './all-recipes.service';
   imports: [
     CommonModule,
     EmailsRoutingModule,
-    ReactiveFormsModule,
+ReactiveFormsModule,
     NgbCollapseModule,
     NgbDropdownModule,
     FormsModule

@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 export class AllRecipesService {
  //recipeSelected = new Subject<Recipe>();
   startEditing = new Subject<number>();
+  recipesChanged = new Subject<Recipe[]>
 
   recipes: Recipe[] = [
     new Recipe(
@@ -55,6 +56,19 @@ export class AllRecipesService {
   getRecipeById(index: number): Recipe | undefined {
     return this.recipes[index];
   }
+
+  addRecipe(recipe:Recipe){
+    this.recipes.push(recipe)
+    this.recipesChanged.next(this.recipes.slice())
+  }
+
+
+  updateRecipe(index: number, newRecipe: Recipe): Recipe | undefined {
+    this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.recipes.slice()); // Emit updated recipes
+    return newRecipe;
+  }
+
 
 
 }
