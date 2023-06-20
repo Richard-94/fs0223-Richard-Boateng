@@ -14,7 +14,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
-import { AllRecipesService } from './all-recipes.service';
+import { AllRecipesService } from './service/all-recipes.service';
 
 
 
@@ -41,6 +41,7 @@ ReactiveFormsModule,
     FormsModule
 
   ],
-  providers: [AllRecipesService],
+  providers: [AllRecipesService
+   ],
 })
 export class EmailsModule { }

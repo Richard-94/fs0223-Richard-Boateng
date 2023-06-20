@@ -38,7 +38,7 @@
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
         <button ngbDropdownItem>To Shopping List</button>
          <button ngbDropdownItem *ngIf="recipe" [routerLink]="['/emails/header/',recipe.id]" (click)="editMe(recipe.id)">Edit Recipe</button>
-        <button ngbDropdownItem>Delete Recipe</button>
+        <button ngbDropdownItem (click)="onDelete()">Delete Recipe</button>
       </div>
     </div>
   </div>

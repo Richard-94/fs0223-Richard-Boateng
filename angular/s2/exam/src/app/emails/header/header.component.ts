@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../recipes/recipe';
-import { AllRecipesService } from '../all-recipes.service';
+import { AllRecipesService } from '../service/all-recipes.service';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Ingredients } from 'src/app/shared/ingredients';
@@ -18,12 +18,14 @@ export class HeaderComponent implements OnInit {
   editedItemIndex!: number;
   editedItem: Recipe | undefined;
   subscription!: Subscription;
-
+  @Output() recipeChanged = new EventEmitter<Recipe[]>();
   recipeIngredients!: FormArray;
 
   constructor(
     private route: ActivatedRoute,
     private recipeService: AllRecipesService,
+    private router:Router,
+
     private formBuilder: FormBuilder
   ) {}
 
@@ -104,12 +106,16 @@ export class HeaderComponent implements OnInit {
       this.recipeService.updateRecipe(this.editedItemIndex, this.recipeForm.value);
       alert('Recipe updated');
       console.log(this.recipeForm.value);
+      this.recipeService.recipesChanged.next(this.recipeService.getRecipes()); // Emit the updated recipes
 
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
       alert('Recipe created');
+      this.recipeService.recipesChanged.next(this.recipeService.getRecipes()); // Emit the updated recipes
     }
+    this.onCancel()
   }
+
 
 
   onAddIngredient() {
@@ -120,6 +126,16 @@ export class HeaderComponent implements OnInit {
         amount: new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
       })
     );
+  }
+
+
+
+
+
+
+
+  onCancel(){
+    this.router.navigate(['/emails/recipe'], {relativeTo:this.route});
   }
 
 }

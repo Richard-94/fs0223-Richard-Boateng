@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Recipe } from '../recipe';
-import { AllRecipesService } from '../../all-recipes.service';
+import { AllRecipesService } from '../../service/all-recipes.service';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -26,9 +26,10 @@ export class RecipesDetailComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const recipeId = Number(params.get('id'));
       this.recipe = this.recipeService.getRecipeById(recipeId);
-      //console.log('Recipe:', this.recipe); // Log the retrieved recipe
+      this.id = recipeId; // Assign the recipeId to the id variable
     });
   }
+
 
   editMe(recipeId?: number) {
     if (recipeId) {
@@ -42,4 +43,12 @@ export class RecipesDetailComponent implements OnInit {
     }
   }
 
+  onDelete() {
+    if (this.id !== undefined) {
+      this.recipeService.delRecipe(this.id);
+      this.router.navigate(['/emails/recipe']);
+    }
+  }
+
 }
+

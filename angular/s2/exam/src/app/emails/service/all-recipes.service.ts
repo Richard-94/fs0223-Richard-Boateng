@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Recipe } from './recipes/recipe';
+
 import { Ingredients } from 'src/app/shared/ingredients';
 import { Subject } from 'rxjs';
+import { Recipe } from '../recipes/recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Subject } from 'rxjs';
 export class AllRecipesService {
  //recipeSelected = new Subject<Recipe>();
   startEditing = new Subject<number>();
-  recipesChanged = new Subject<Recipe[]>
+  recipesChanged = new Subject<Recipe[]>()
 
   recipes: Recipe[] = [
     new Recipe(
@@ -63,13 +64,19 @@ export class AllRecipesService {
   }
 
 
-  updateRecipe(index: number, newRecipe: Recipe): Recipe | undefined {
+  updateRecipe(index: number, newRecipe: Recipe){
     this.recipes[index] = newRecipe;
     this.recipesChanged.next(this.recipes.slice()); // Emit updated recipes
-    return newRecipe;
+    newRecipe;
   }
 
 
+  delRecipe(index: number) {
+    this.recipes.splice(index, 1); // Use splice instead of slice
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
 
 }
+
 

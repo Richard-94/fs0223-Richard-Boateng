@@ -1,30 +1,31 @@
+
+
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe';
-import { AllRecipesService } from '../../all-recipes.service';
+import { AllRecipesService } from '../../service/all-recipes.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-recipes-list',
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.scss'],
-
 })
 export class RecipesListComponent implements OnInit {
-  recipes!: Recipe[];
+  recipes: Recipe[] = [];
+  private recipesChangedSubscription!: Subscription;
 
-  constructor (private recipeService:AllRecipesService){}
-
-
+  constructor(private recipeService: AllRecipesService) {}
 
   ngOnInit(): void {
-    this.recipeService.recipesChanged.subscribe(
-      (recipes:Recipe[])=>{
-        this.recipes = recipes
-      }
-
-    )
-    this.recipes = this.recipeService.getRecipes()
-    console.log(this.recipes);
-
+    this.recipes = this.recipeService.getRecipes();
+    this.recipesChangedSubscription = this.recipeService.recipesChanged.subscribe((recipes: Recipe[]) => {
+      this.recipes = recipes;
+    });
+    this.recipes=this.recipeService.getRecipes()
   }
 
+
+  ngOnDestroy(): void {
+    this.recipesChangedSubscription.unsubscribe();
+  }
 }

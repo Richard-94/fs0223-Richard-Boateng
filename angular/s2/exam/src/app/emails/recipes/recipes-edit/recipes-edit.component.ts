@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AllRecipesService } from '../../all-recipes.service';
+import { AllRecipesService } from '../../service/all-recipes.service';
 import { Subscription } from 'rxjs';
 import { Recipe } from '../recipe';
 
