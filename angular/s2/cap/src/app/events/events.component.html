@@ -1,0 +1,74 @@
+
+
+
+<div  class="component-container text-white">
+
+  <div class="container text-center">
+    <h1 class="mb-5">Events you have created</h1>
+    <h3>Categories</h3>
+  </div>
+  <ul class="d-flex justify-content-around ">
+    <li>
+      Grest
+    </li>
+    <li>
+      Teatro
+    </li>
+    <li>
+      Musica
+    </li>
+    <li>
+      Circo
+    </li>
+  </ul>
+
+  <p *ngIf="isFetching && !error">Loading...</p>
+      <div class="alert alert-danger" *ngIf="error">
+        <h1>An Error Occured</h1>
+        <p> {{error}} </p>
+        <button class="btn btn-danger" (click)="onHandleError()">Okay</button>
+      </div>
+
+
+  <div class="mb-5" *ngFor="let eve of loadEvents; let i = index">
+    <ngb-carousel class="text-center" *ngIf="eve.images && eve.images.length > 0">
+      <ng-template  ngbSlide *ngFor="let image of eve.images">
+
+        <div id="post" class="picsum-img-wrapper">
+          <img class="mb-3" height="400px" [src]="image" alt="Random slide"/>
+        </div>
+
+
+
+      </ng-template>
+    </ngb-carousel>
+
+    <div  class="mb-5"  id="location" class="d-flex justify-content-around">
+      <div>
+        <h1> {{eve.authForm?.title}} </h1>
+
+        <h5>{{eve.authForm?.place}} - <span>{{eve.authForm?.time}}</span> </h5>
+      </div>
+      <div>
+        <p class="fs-3">
+          $ {{eve.authForm?. price}}
+        </p>
+      </div>
+    </div>
+
+    <div >
+      <p class="text-white p-0 m-0 fs-2">{{eve.authForm?.date}}</p>
+    </div>
+
+    <div class="text-center">
+      <a href="#">Details</a>
+    </div>
+
+  <div class="text-center">
+    <button (click)="modifyEvent(eventId)">Modify Event</button>
+
+  </div>
+
+  </div>
+
+</div>

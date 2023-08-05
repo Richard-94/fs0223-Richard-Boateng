@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Recipe } from '../recipe';
 import { AllRecipesService } from '../../service/all-recipes.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 @Component({
   selector: 'app-recipes-detail',
@@ -19,7 +20,8 @@ export class RecipesDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private recipeService: AllRecipesService
+    private recipeService: AllRecipesService,
+    private recipeSvc:DataStorageService
   ) {}
 
   ngOnInit(): void {
@@ -48,6 +50,15 @@ export class RecipesDetailComponent implements OnInit {
       this.recipeService.delRecipe(this.id);
       this.router.navigate(['/emails/recipe']);
     }
+  }
+
+
+  onSaveData(){
+    this.recipeSvc.storeRecipes()
+  }
+
+  onFetchData(){
+    this.recipeSvc.fetchRecipe()
   }
 
 }

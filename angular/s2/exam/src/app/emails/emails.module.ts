@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { AllRecipesService } from './service/all-recipes.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -35,10 +36,11 @@ import { AllRecipesService } from './service/all-recipes.service';
   imports: [
     CommonModule,
     EmailsRoutingModule,
-ReactiveFormsModule,
+    ReactiveFormsModule,
     NgbCollapseModule,
     NgbDropdownModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
   ],
   providers: [AllRecipesService

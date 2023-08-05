@@ -5,6 +5,7 @@ import { AllRecipesService } from '../service/all-recipes.service';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Ingredients } from 'src/app/shared/ingredients';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -25,6 +26,7 @@ export class HeaderComponent implements OnInit {
     private route: ActivatedRoute,
     private recipeService: AllRecipesService,
     private router:Router,
+    private recipeSvc:DataStorageService,
 
     private formBuilder: FormBuilder
   ) {}
@@ -128,14 +130,16 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-
-
-
-
-
-
   onCancel(){
     this.router.navigate(['/emails/recipe'], {relativeTo:this.route});
+  }
+
+  onSaveData(){
+    this.recipeSvc.storeRecipes()
+  }
+
+  onFetchData(){
+    this.recipeSvc.fetchRecipe()
   }
 
 }

@@ -4,6 +4,24 @@
   </div>
 
   <div class="row">
+    <div class="col m-0">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          Manage
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="onSaveData()">Save Data</button>
+          <button ngbDropdownItem (click)="onFetchData()">Fetch Data</button>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <div class="row">
     <div class="col-xs-12">
       <div *ngIf="recipe">
         <div class="row">
@@ -43,3 +61,5 @@
     </div>
   </div>
 </div>
+
+

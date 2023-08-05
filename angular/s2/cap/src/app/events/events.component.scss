@@ -1,0 +1,29 @@
+.component-container {
+  background-color:#41170F; /* Set your desired background color */
+  ul{
+    list-style: none;
+    cursor: pointer
+
+  };
+  #post{
+    position: relative;
+  }
+
+  .fix{
+    position: absolute;
+    top: 300px;
+    right: 280px;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  #location{
+    background-color: rgba(0,0,0,0.2);
+  }
+
+}
+
